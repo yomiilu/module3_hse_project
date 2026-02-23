@@ -1,0 +1,20 @@
+@keyframes hang1 {
+    0% { transform: rotate(3deg); }
+    100% { transform: rotate(-3deg); }
+}
+
+@keyframes hang2 {
+    0% { transform: rotate(-2deg); }
+    100% { transform: rotate(2deg); }
+}
+
+@keyframes blinking {
+    0%, 90% { opacity: 1; }   
+    90.01%, 100% { opacity: 0; } 
+}
+
+@keyframes light1 {
+    0% { opacity: 0.2; }   
+    50% { opacity: 1; }   
+    100% { opacity: 0.2; } 
+}
