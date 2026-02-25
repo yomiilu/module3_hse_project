@@ -18,3 +18,8 @@
     50% { opacity: 1; }   
     100% { opacity: 0.2; } 
 }
+
+@keyframes fl {
+    0% { transform: rotate(-1deg); }
+    100% { transform: rotate(1deg); }
+}

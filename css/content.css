@@ -63,7 +63,7 @@ html, body {
     position: absolute;
     transform-origin: top;
     animation: hang1 2s infinite alternate ease-in-out;
-    z-index: 5;
+    z-index: 20000;
 
 }
 
@@ -145,3 +145,53 @@ html, body {
     position: absolute;
 } */
 
+.dialog_closed{
+    width: 7.57vw;
+    height: 7.43vw;
+    position: fixed;
+    margin-top: -64%;
+    margin-left: 2%;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.dialog_opened{
+    width: 7.57vw;
+    height: 7.43vw;
+    position: fixed;
+    margin-top: -64%;
+    margin-left: 2%;
+    display: none;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.text {
+  position: fixed;
+  margin-left: 12%;
+  margin-top: -65%;
+  width: 43.61vw;
+  height: 13.33vw;
+  z-index: 10000;
+}
+
+.flower_small{
+    width: 18.47vw;
+    height: 38.33vw;
+    margin-top: 7%;
+    margin-left: 80%;
+    position: absolute;
+    transform-origin: bottom;
+    animation: fl 3s infinite alternate ease-in-out;
+}
+
+.flower_grow{
+    width: 23.61vw;
+    height: 44.65vw;
+    margin-top: 0.67%;
+    margin-left: 75%;
+    position: absolute;
+    transform-origin: bottom;
+    animation: fl 3s infinite alternate ease-in-out;
+    display: none;
+}
