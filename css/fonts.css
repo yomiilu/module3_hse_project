@@ -1,0 +1,7 @@
+@font-face {
+    font-family: "Kom-post";
+    src: url("../fonts/kom-post.ttf") format("truetype");
+    font-style: normal; 
+    font-weight: 50;
+    font-display: swap;
+}

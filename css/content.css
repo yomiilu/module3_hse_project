@@ -29,19 +29,12 @@ html, body {
     position: absolute;
     margin-left: 0%;
     margin-top: 45%;
-    animation: light 8s linear infinite;
 }
 
 @keyframes light {
-    0% {
-        transform: translateX(0) translateY(0);
-    }
-    50% {
-        transform: translateX(-5vw) translateY(-1vw); /* уезжает влево на 30px */
-    }
-    100% {
-        transform: translateX(0) translateY(0); /* возвращается обратно */
-    }
+    0% {transform: translateX(0) translateY(0);}
+    50% {transform: translateX(-5vw) translateY(-1vw);}
+    100% {transform: translateX(0) translateY(0); }
 }
 
 
@@ -58,7 +51,7 @@ html, body {
 .hang1{
     width: 7.85vw;
     height: 27.64vw;
-    margin-left: 48%;
+    margin-left: 49%;
     margin-top: -1%;
     position: absolute;
     transform-origin: top;
@@ -109,25 +102,6 @@ html, body {
     animation: blinking 2s infinite steps(1);
 }
 
-.section2{
-    margin-top: -10%;
-    width: 100%;
-    height: 120vw;
-    position: relative;
-} 
-
-.flower1{
-    width: 35.83vw;
-    height: 35.56vw;
-    margin-top: -7%;
-    margin-left: -9%;
-    position: absolute;
-    transition: transform 0.1s linear; /* Быстрая реакция на скролл */
-    will-change: transform;
-    transform-origin: center center;
-    z-index: 10;
-}
-
 .light {
     width: 63.33vw;
     height: 65.69vw;
@@ -137,18 +111,170 @@ html, body {
     margin-left: 8.1%;
     animation: light1 4s ease-in-out infinite;
 }
-/* .flower2{
+
+.section2{
+    margin-top: -10%;
+    width: 100%;
+    height: 120vw;
+    position: relative;
+} 
+
+.section3{
+    margin-top: -113%;
+    width: 100%;
+    height: 470vw;
+    position: relative;
+    background-color: #C4CDFA;
+} 
+
+:root {
+  --scroll-progress: 0;
+}
+
+.flower1{
+    width: 35.83vw;
+    height: 35.56vw;
+    margin-top: -4%;
+    margin-left: -12%;
+    position: absolute;
+    transition: transform 0.1s linear; 
+    will-change: transform;
+    transform-origin: center center;
+    z-index: 40000;
+    transform:
+        translateX(calc((1 - abs(1 - var(--scroll-progress) * 2)) * 20vw))
+        translateY(calc(var(--scroll-progress) * 10vw))
+        rotate(calc(var(--scroll-progress) * 280deg))
+        scale(calc(1 + (1 - abs(1 - var(--scroll-progress) * 2)) * 1.5));
+}
+
+.flower1_1{
+    width: 35.83vw;
+    height: 35.56vw;
+    margin-top: -4%;
+    margin-left: -12%;
+    position: absolute;
+    transition: transform 0.1s linear; 
+    will-change: transform;
+    transform-origin: center center;
+    z-index: 30000;
+    transform: rotate(calc(var(--scroll-progress) * 40deg));
+}
+
+.flower2{
     width: 29.17vw;
     height: 28.89vw;
-    margin-top: -6%;
-    margin-left: 22%;
+    margin-top: -2%;
+    margin-left: 17%;
     position: absolute;
-} */
+    z-index: 30000;
+    transform:
+        translateX(calc((1 - abs(1 - var(--scroll-progress) * 2)) * -3vw))
+        translateY(calc(var(--scroll-progress) * 10vw))
+        rotate(calc(var(--scroll-progress) * 280deg))
+        scale(calc(1 + (1 - abs(1 - var(--scroll-progress) * 2)) * 0.4));
+}
+
+.flower2_1{
+    width: 29.17vw;
+    height: 28.89vw;
+    margin-top: -2%;
+    margin-left: 17%;
+    position: absolute;
+    z-index: 30000;
+    transform:
+        rotate(calc(var(--scroll-progress) * -80deg))
+        scale(calc(1 + (1 - abs(1 - var(--scroll-progress) * 2)) * 0.8));
+}
+
+.flower3{
+    width: 35.63vw;
+    height: 35.97vw;
+    margin-top: -2%;
+    rotate: 40deg;
+    margin-left: 34%;
+    position: absolute;
+    z-index: 30000;
+    transform:
+        translateX(calc((1 - abs(1 - var(--scroll-progress) * 2)) * 20vw))
+        translateY(calc(var(--scroll-progress) * 10vw))
+        rotate(calc(var(--scroll-progress) * -120deg))
+        scale(calc(1 + (1 - abs(1 - var(--scroll-progress) * 2)) * 1.5));
+}
+
+.flower3_1{
+    width: 35.63vw;
+    height: 35.97vw;
+    margin-top: 0%;
+    margin-left: 34%;
+    position: absolute;
+    z-index: 10000;
+    transform:
+        rotate(calc(var(--scroll-progress) * -90deg))
+        scale(calc(1 + (1 - abs(1 - var(--scroll-progress) * 2)) * 0.7));
+}
+
+.flower4{
+    width: 29.17vw;
+    height: 28.89vw;
+    margin-top: 3%;
+    margin-left: 56%;
+    position: absolute;
+    z-index: 30000;
+    transform:
+        translateX(calc((1 - abs(1 - var(--scroll-progress) * 2)) * -5vw))
+        translateY(calc(var(--scroll-progress) * 10vw))
+        rotate(calc(var(--scroll-progress) * 100deg))
+        scale(calc(1 + (1 - abs(1 - var(--scroll-progress) * 2)) * 0.8));
+}
+
+.flower4_1{
+    width: 40.17vw;
+    height: 40.89vw;
+    margin-top: 0%;
+    rotate:40deg;
+    margin-left: 53%;
+    position: absolute;
+    z-index: 10000;
+    transform:
+        rotate(calc(var(--scroll-progress) * 200deg))
+        scale(calc(1 + (1 - abs(1 - var(--scroll-progress) * 2)) * 0.9));
+}
+
+.flower5{
+    width: 37.01vw;
+    height: 35.56vw;
+    margin-top: -4%;
+    margin-left: 80%;
+    position: absolute;
+    z-index: 30000;
+    transform:
+        translateX(calc((1 - abs(1 - var(--scroll-progress) * 2)) * -5vw))
+        translateY(calc(var(--scroll-progress) * 10vw))
+        rotate(calc(var(--scroll-progress) * 200deg))
+        scale(calc(1 + (1 - abs(1 - var(--scroll-progress) * 2)) * 0.8));
+}
+
+.textik1{
+    margin-left: 15.4%;
+    margin-top: -61.9%;
+    width: 36vw;
+    height: 4vw;
+    position: absolute;
+    z-index: 10000;
+    font-family: "kom-post";
+    color: #686868;
+    line-height: 2.3vw;
+    font-size: 1.66vw;
+    pointer-events: none;
+
+}
+
 
 .dialog_closed{
     width: 7.57vw;
     height: 7.43vw;
-    position: fixed;
+    position: absolute;
     margin-top: -64%;
     margin-left: 2%;
     cursor: pointer;
@@ -158,22 +284,26 @@ html, body {
 .dialog_opened{
     width: 7.57vw;
     height: 7.43vw;
-    position: fixed;
+    position: absolute;
     margin-top: -64%;
     margin-left: 2%;
-    display: none;
     cursor: pointer;
     z-index: 10000;
 }
 
+
 .text {
-  position: fixed;
+  position: absolute;
   margin-left: 12%;
   margin-top: -65%;
   width: 43.61vw;
   height: 13.33vw;
   z-index: 10000;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
 }
+
+
 
 .flower_small{
     width: 18.47vw;
@@ -194,4 +324,177 @@ html, body {
     transform-origin: bottom;
     animation: fl 3s infinite alternate ease-in-out;
     display: none;
+}
+
+.back_screen3{
+    width: 100vw;
+    height: 163.75vw;
+    position: absolute;
+    margin-top: 14%;
+}
+
+.dialog_closed2{
+    width: 7.57vw;
+    height: 7.43vw;
+    position: absolute;
+    margin-top: 35%;
+    margin-left: 2%;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.dialog_opened2{
+    width: 7.57vw;
+    height: 7.43vw;
+    position: absolute;
+    margin-top: 50%;
+    margin-left: 2%;
+    display: none;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.text2 {
+  position: absolute;
+  margin-left: 12%;
+  margin-top: 35%;
+  width: 43.61vw;
+  height: 13.33vw;
+  z-index: 10000;
+}
+
+.potion_pink{
+    width: 5.9vw;
+    height: 13.20vw;
+}
+
+.potion_blue{
+    width: 9vw;
+    height: 11.15vw;
+}
+
+.potion_purple{
+    width: 7.54vw;
+    height: 9.72vw;
+}
+
+.potion_pink1{
+    margin-top: 53.4%;
+    margin-left: 15%;
+    z-index: 90000000;
+    position: absolute;
+    cursor: pointer;
+}
+
+.potion_pink2{
+    margin-top: 53.4%;
+    margin-left: 78%;
+    z-index: 90000000;
+    position: absolute;
+    cursor: pointer;
+}
+
+.potion_pink3{
+    margin-top: 69.5%;
+    margin-left: 30%;
+    z-index: 90000000;
+    position: absolute;
+    cursor: pointer;
+}
+
+.potion_pink4{
+    margin-top: 85.6%;
+    margin-left: 48%;
+    z-index: 90000000;
+    position: absolute;
+    cursor: pointer;
+}
+
+.potion_pink5{
+    margin-top: 85.6%;
+    margin-left: 78%;
+    z-index: 90000000;
+    position: absolute;
+    cursor: pointer;
+}
+
+
+.potion_blue1{
+    margin-top: 55.6%;
+    margin-left: 28.5%;
+    z-index: 90000000;
+    position: absolute;
+    cursor: pointer;
+}
+
+.potion_blue2{
+    margin-top: 55.6%;
+    margin-left: 46%;
+    z-index: 90000000;
+    position: absolute;
+    cursor: pointer;
+}
+
+.potion_blue3{
+    margin-top: 71.7%;
+    margin-left: 46%;
+    z-index: 90000000;
+    position: absolute;
+    cursor: pointer;
+}
+
+.potion_blue4{
+    margin-top: 71.7%;
+    margin-left: 63%;
+    z-index: 90000000;
+    position: absolute;
+    cursor: pointer;
+}
+
+.potion_blue5{
+    margin-top: 87.8%;
+    margin-left: 13%;
+    z-index: 90000000;
+    position: absolute;
+    cursor: pointer;
+}
+
+.potion_purple1{
+    margin-top: 57.4%;
+    margin-left: 63.5%;
+    z-index: 90000000;
+    position: absolute;
+    cursor: pointer;
+}
+
+.potion_purple2{
+    margin-top: 73.5%;
+    margin-left: 15%;
+    z-index: 90000000;
+    position: absolute;
+    cursor: pointer;
+}
+
+.potion_purple3{
+    margin-top: 71.7%;
+    margin-left: 46%;
+    z-index: 90000000;
+    position: absolute;
+    cursor: pointer;
+}
+
+.potion_purple4{
+    margin-top: 71.7%;
+    margin-left: 62%;
+    z-index: 90000000;
+    position: absolute;
+    cursor: pointer;
+}
+
+.potion_purple5{
+    margin-top: 87.8%;
+    margin-left: 13%;
+    z-index: 90000000;
+    position: absolute;
+    cursor: pointer;
 }
