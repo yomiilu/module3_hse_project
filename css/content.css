@@ -45,7 +45,22 @@ html, body {
     margin-left: 83%;
     margin-top: 30.2%;
     position: absolute;
-    z-index: 5;
+    z-index: 10000000000;
+    transition: opacity 0.3 ease;
+}
+
+
+.poliv2{
+    width: 10.42vw;
+    height: 11.39vw;
+    cursor:pointer;
+    margin-left: 83%;
+    margin-top: 30.2%;
+    position: absolute;
+    z-index: 10000000000;
+    opacity: 0;
+    transition: opacity 0.3 ease;
+    pointer-events: none;
 }
 
 .hang1{
@@ -56,7 +71,7 @@ html, body {
     position: absolute;
     transform-origin: top;
     animation: hang1 2s infinite alternate ease-in-out;
-    z-index: 20000;
+    z-index: 2000;
 
 }
 
@@ -100,6 +115,14 @@ html, body {
 
 .girl1 {
     animation: blinking 2s infinite steps(1);
+}
+
+.black_square{
+    width: 100%;
+    position: absolute;
+    z-index: 3990;
+    opacity: 0;
+    transition: opacity 3s ease-in-out;
 }
 
 .light {
@@ -261,7 +284,7 @@ html, body {
     width: 36vw;
     height: 4vw;
     position: absolute;
-    z-index: 10000;
+    z-index: 20000;
     font-family: "kom-post";
     color: #686868;
     line-height: 2.3vw;
@@ -278,7 +301,7 @@ html, body {
     margin-top: -64%;
     margin-left: 1.8%;
     cursor: pointer;
-    z-index: 10000;
+    z-index: 2800;
 }
 
 .dialog_opened{
@@ -288,7 +311,7 @@ html, body {
     margin-top: -64%;
     margin-left: 1.8%;
     cursor: pointer;
-    z-index: 10000;
+    z-index: 2800;
 }
 
 
@@ -298,7 +321,7 @@ html, body {
   margin-top: -65%;
   width: 43.61vw;
   height: 13.33vw;
-  z-index: 10000;
+  z-index: 1200;
   transition: opacity 0.35s ease;
   pointer-events: none;
 }
@@ -313,6 +336,7 @@ html, body {
     position: absolute;
     transform-origin: bottom;
     animation: fl 3s infinite alternate ease-in-out;
+     z-index: 100000000;
 }
 
 .flower_grow{
@@ -324,6 +348,7 @@ html, body {
     transform-origin: bottom;
     animation: fl 3s infinite alternate ease-in-out;
     display: none;
+    z-index: 100000000;
 }
 
 .back_screen3{
@@ -340,7 +365,7 @@ html, body {
     margin-top: 36%;
     margin-left: 1.8%;
     cursor: pointer;
-    z-index: 10000;
+    z-index: 2800;
 }
 
 .dialog_opened2{
@@ -351,7 +376,7 @@ html, body {
     margin-left: 1.8%;
     display: none;
     cursor: pointer;
-    z-index: 10000;
+    z-index: 1300;
 }
 
 .text2 {
