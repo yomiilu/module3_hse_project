@@ -276,7 +276,7 @@ html, body {
     height: 7.43vw;
     position: absolute;
     margin-top: -64%;
-    margin-left: 2%;
+    margin-left: 1.8%;
     cursor: pointer;
     z-index: 10000;
 }
@@ -286,7 +286,7 @@ html, body {
     height: 7.43vw;
     position: absolute;
     margin-top: -64%;
-    margin-left: 2%;
+    margin-left: 1.8%;
     cursor: pointer;
     z-index: 10000;
 }
@@ -337,8 +337,8 @@ html, body {
     width: 7.57vw;
     height: 7.43vw;
     position: absolute;
-    margin-top: 35%;
-    margin-left: 2%;
+    margin-top: 36%;
+    margin-left: 1.8%;
     cursor: pointer;
     z-index: 10000;
 }
@@ -347,8 +347,8 @@ html, body {
     width: 7.57vw;
     height: 7.43vw;
     position: absolute;
-    margin-top: 50%;
-    margin-left: 2%;
+    margin-top: 36%;
+    margin-left: 1.8%;
     display: none;
     cursor: pointer;
     z-index: 10000;
@@ -404,7 +404,7 @@ html, body {
 
 .potion_pink4{
     margin-top: 85.6%;
-    margin-left: 48%;
+    margin-left: 46%;
     z-index: 90000000;
     position: absolute;
     cursor: pointer;
@@ -429,7 +429,7 @@ html, body {
 
 .potion_blue2{
     margin-top: 55.6%;
-    margin-left: 46%;
+    margin-left: 45%;
     z-index: 90000000;
     position: absolute;
     cursor: pointer;
@@ -437,7 +437,7 @@ html, body {
 
 .potion_blue3{
     margin-top: 71.7%;
-    margin-left: 46%;
+    margin-left: 45%;
     z-index: 90000000;
     position: absolute;
     cursor: pointer;
@@ -445,7 +445,7 @@ html, body {
 
 .potion_blue4{
     margin-top: 71.7%;
-    margin-left: 63%;
+    margin-left: 62%;
     z-index: 90000000;
     position: absolute;
     cursor: pointer;
@@ -476,25 +476,81 @@ html, body {
 }
 
 .potion_purple3{
-    margin-top: 71.7%;
-    margin-left: 46%;
+    margin-top: 73.5%;
+    margin-left: 77.7%;
     z-index: 90000000;
     position: absolute;
     cursor: pointer;
 }
 
 .potion_purple4{
-    margin-top: 71.7%;
-    margin-left: 62%;
+    margin-top: 89.6%;
+    margin-left: 30%;
     z-index: 90000000;
     position: absolute;
     cursor: pointer;
 }
 
 .potion_purple5{
-    margin-top: 87.8%;
-    margin-left: 13%;
+    margin-top: 89.6%;
+    margin-left: 63%;
     z-index: 90000000;
+    position: absolute;
+    cursor: pointer;
+}
+
+
+.table{
+    margin-top: 123.3%;
+    position: absolute;
+    width: 92.99vw;
+    height: 42.36vw;
+    margin-left: 3.49%;
+}
+
+.bochka{
+    margin-top: 146.3%;
+    position: absolute;
+    width: 26.81vw;
+    height: 24.72vw;
+    margin-left: 72.49%;
+}
+
+
+.banochki{
+    width: 82vw;
+    height: 27vw;
+    position: absolute;
+    margin-top: 137%;
+    margin-left: 9%;
+
+}
+
+
+.banka1{
+    width: 7.71vw;
+    height: 11.04vw;
+    margin-top: 1%;
+    margin-left: 4%;
+    position: absolute;
+    cursor: pointer;
+    animation: banka1 0.5s linear ease-in-out;
+}
+
+.banka_blue{
+    width: 6.71vw;
+    height: 10.04vw;
+    margin-top: 2.8%;
+    margin-left: 14%;
+    position: absolute;
+    cursor: pointer;
+}
+
+.banka2{
+    width: 7.85vw;
+    height: 11.25vw;
+    margin-top: 1%;
+    margin-left: 20%;
     position: absolute;
     cursor: pointer;
 }
