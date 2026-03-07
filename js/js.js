@@ -70,9 +70,11 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 
+setTimeout(function() {
+    document.querySelector('.black_square').style.opacity = '1';
+}, 3000);
 
 
-  
 const poliv = document.querySelector('.poliv');
 const poliv2 = document.querySelector('.poliv2');
 
