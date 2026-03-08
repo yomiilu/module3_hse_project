@@ -75,6 +75,7 @@ setTimeout(function() {
 }, 3000);
 
 
+
 const poliv = document.querySelector('.poliv');
 const poliv2 = document.querySelector('.poliv2');
 
@@ -115,5 +116,23 @@ if (poliv && poliv2) {
   document.addEventListener('mouseup', stopDrag);
   document.addEventListener('mouseleave', stopDrag);
 }
+
+document.addEventListener('mousemove', (e) => {
+  const poliv2 = document.querySelector('.poliv2');
+  const flowerSmall = document.querySelector('.flower_small');
+  const flowerGrow = document.querySelector('.flower_grow');
+  
+  if (!poliv2 || !flowerSmall || !flowerGrow) return;
+  if (poliv2.style.opacity !== '1') return;
+  
+  let r1 = poliv2.getBoundingClientRect();
+  let r2 = flowerSmall.getBoundingClientRect();
+  
+  if (r1.left < r2.right && r1.right > r2.left && 
+      r1.top < r2.bottom && r1.bottom > r2.top) {
+    flowerSmall.style.display = 'none';
+    flowerGrow.style.display = 'block';
+  }
+});
 
 });
