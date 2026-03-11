@@ -224,7 +224,134 @@ document.addEventListener('mousemove', (e) => {
       r1.top < r2.bottom && r1.bottom > r2.top) {
     flowerSmall.style.display = 'none';
     flowerGrow.style.display = 'block';
+
+    document.querySelector('.black_square').style.opacity = '0';
   }
 });
+const potions = document.querySelectorAll('[data-index]');
 
+
+if (potions.length > 0) {
+    let itemsOrder = [];
+    for (let i = 0; i < 15; i++) {
+        itemsOrder.push(i);
+    }
+    
+    function shuffleArray(arr) {
+        for (let i = arr.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
+    }
+    
+    const potionImages = [
+        'img/potion_pink.svg',
+        'img/potion_pink.svg',
+        'img/potion_pink.svg',
+        'img/potion_pink.svg',
+        'img/potion_pink.svg',
+        'img/potion_blue.svg',
+        'img/potion_blue.svg',
+        'img/potion_blue.svg',
+        'img/potion_blue.svg',
+        'img/potion_blue.svg',
+        'img/potion_purple.svg',
+        'img/potion_purple.svg',
+        'img/potion_purple.svg',
+        'img/potion_purple.svg',
+        'img/potion_purple.svg'
+    ];
+    
+    function updatePotions() {
+      
+        potions.forEach((potion, index) => {
+            const img = potion.querySelector('img');
+            const colorIndex = itemsOrder[index];
+            const src = potionImages[colorIndex];
+
+            img.src = src;
+
+            img.classList.remove('potion_pink', 'potion_blue', 'potion_purple');
+
+            if (src.includes('pink')) {
+                img.classList.add('potion_pink');
+            } else if (src.includes('blue')) {
+                img.classList.add('potion_blue');
+            } else if (src.includes('purple')) {
+                img.classList.add('potion_purple');
+            }
+        });
+    }
+    
+    itemsOrder = shuffleArray(itemsOrder);
+    updatePotions();
+    
+    let draggedIndex = null;
+    let draggedElement = null;
+    let clone = null;
+    
+    potions.forEach((potion) => {
+        potion.addEventListener('mousedown', function(e) {
+            e.preventDefault();
+            draggedIndex = parseInt(this.getAttribute('data-index'));
+            draggedElement = this;
+            
+            clone = this.cloneNode(true);
+            clone.style.position = 'fixed';
+            clone.style.zIndex = '100000000000';
+            clone.style.width = this.offsetWidth + 'px';
+            clone.style.height = this.offsetHeight + 'px';
+            clone.style.margin = '0';
+            clone.style.left = e.clientX - this.offsetWidth/2 + 'px';
+            clone.style.top = e.clientY - this.offsetHeight/2 + 'px';
+            clone.style.pointerEvents = 'none';
+            clone.style.opacity = '0.8';
+            document.body.appendChild(clone);
+            
+            this.style.opacity = '0.5';
+        });
+        
+        document.addEventListener('mousemove', function(e) {
+            if (!clone) return;
+            e.preventDefault();
+            clone.style.left = e.clientX - clone.offsetWidth/2 + 'px';
+            clone.style.top = e.clientY - clone.offsetHeight/2 + 'px';
+        });
+        
+        potion.addEventListener('mouseup', function(e) {
+            if (draggedIndex === null) return;
+            
+            const targetIndex = parseInt(this.getAttribute('data-index'));
+            
+            if (draggedIndex !== targetIndex) {
+                [itemsOrder[draggedIndex], itemsOrder[targetIndex]] = 
+                [itemsOrder[targetIndex], itemsOrder[draggedIndex]];
+                updatePotions();
+            }
+            
+            if (clone) {
+                clone.remove();
+                clone = null;
+            }
+            if (draggedElement) {
+                draggedElement.style.opacity = '1';
+            }
+            
+            draggedIndex = null;
+            draggedElement = null;
+        });
+    });
+    
+    document.addEventListener('mouseup', function() {
+        if (clone) {
+            clone.remove();
+            clone = null;
+        }
+        if (draggedElement) {
+            draggedElement.style.opacity = '1';
+        }
+        draggedIndex = null;
+        draggedElement = null;
+    });}
 });

@@ -122,7 +122,7 @@ html, body {
     position: absolute;
     z-index: 3990;
     opacity: 0;
-    transition: opacity 3s ease-in-out;
+    transition: opacity 4s ease-in-out;
 }
 
 .light {
@@ -167,7 +167,7 @@ html, body {
     transform:
         translateX(calc((1 - abs(1 - var(--scroll-progress) * 2)) * 20vw))
         translateY(calc(var(--scroll-progress) * 10vw))
-        rotate(calc(var(--scroll-progress) * 280deg))
+        rotate(calc(var(--scroll-progress) * 220deg))
         scale(calc(1 + (1 - abs(1 - var(--scroll-progress) * 2)) * 1.5));
 }
 
@@ -393,7 +393,7 @@ html, body {
     height: 13.20vw;
 }
 
-.potion_blue{
+/* .potion_blue{
     width: 9vw;
     height: 11.15vw;
 }
@@ -401,43 +401,43 @@ html, body {
 .potion_purple{
     width: 7.54vw;
     height: 9.72vw;
-}
+} */
 
 .potion_pink1{
-    margin-top: 53.4%;
-    margin-left: 15%;
+    margin-top: 52.4%;
+    margin-left: 13%;
     z-index: 90000000;
     position: absolute;
     cursor: pointer;
 }
 
 .potion_pink2{
-    margin-top: 53.4%;
-    margin-left: 78%;
+    margin-top: 52.4%;
+    margin-left: 77.5%;
     z-index: 90000000;
     position: absolute;
     cursor: pointer;
 }
 
 .potion_pink3{
-    margin-top: 69.5%;
-    margin-left: 30%;
+    margin-top: 68.5%;
+    margin-left: 29.5%;
     z-index: 90000000;
     position: absolute;
     cursor: pointer;
 }
 
 .potion_pink4{
-    margin-top: 85.6%;
-    margin-left: 46%;
+    margin-top: 84.6%;
+    margin-left: 46.5%;
     z-index: 90000000;
     position: absolute;
     cursor: pointer;
 }
 
 .potion_pink5{
-    margin-top: 85.6%;
-    margin-left: 78%;
+    margin-top: 84.6%;
+    margin-left: 77.5%;
     z-index: 90000000;
     position: absolute;
     cursor: pointer;
@@ -445,39 +445,39 @@ html, body {
 
 
 .potion_blue1{
-    margin-top: 55.6%;
-    margin-left: 28.5%;
+    margin-top: 52.4%;
+    margin-left: 29.5%;
     z-index: 90000000;
     position: absolute;
     cursor: pointer;
 }
 
 .potion_blue2{
-    margin-top: 55.6%;
-    margin-left: 45%;
+    margin-top: 52.4%;
+    margin-left: 46.5%;
     z-index: 90000000;
     position: absolute;
     cursor: pointer;
 }
 
 .potion_blue3{
-    margin-top: 71.7%;
-    margin-left: 45%;
+    margin-top: 68.5%;
+    margin-left: 46.5%;
     z-index: 90000000;
     position: absolute;
     cursor: pointer;
 }
 
 .potion_blue4{
-    margin-top: 71.7%;
-    margin-left: 62%;
+    margin-top: 68.5%;
+    margin-left: 62.5%;
     z-index: 90000000;
     position: absolute;
     cursor: pointer;
 }
 
 .potion_blue5{
-    margin-top: 87.8%;
+    margin-top: 84.6%;
     margin-left: 13%;
     z-index: 90000000;
     position: absolute;
@@ -485,40 +485,40 @@ html, body {
 }
 
 .potion_purple1{
-    margin-top: 57.4%;
-    margin-left: 63.5%;
+    margin-top: 52.4%;
+    margin-left: 62.5%;
     z-index: 90000000;
     position: absolute;
     cursor: pointer;
 }
 
 .potion_purple2{
-    margin-top: 73.5%;
-    margin-left: 15%;
+    margin-top: 68.5%;
+    margin-left: 13%;
     z-index: 90000000;
     position: absolute;
     cursor: pointer;
 }
 
 .potion_purple3{
-    margin-top: 73.5%;
-    margin-left: 77.7%;
+    margin-top: 68.5%;
+    margin-left: 77.5%;
     z-index: 90000000;
     position: absolute;
     cursor: pointer;
 }
 
 .potion_purple4{
-    margin-top: 89.6%;
-    margin-left: 30%;
+    margin-top: 84.6%;
+    margin-left: 29.5%;
     z-index: 90000000;
     position: absolute;
     cursor: pointer;
 }
 
 .potion_purple5{
-    margin-top: 89.6%;
-    margin-left: 63%;
+    margin-top: 84.6%;
+    margin-left: 62.5%;
     z-index: 90000000;
     position: absolute;
     cursor: pointer;
@@ -579,3 +579,45 @@ html, body {
     position: absolute;
     cursor: pointer;
 }
+
+[data-index]{
+    width: 10vw;
+    height: 14vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* position: absolute; */
+}
+
+
+/* .cursor{
+    position: relative;
+    width: 24em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 30px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);    
+}
+
+.typewriter-animation {
+  animation: 
+    typewriter 5s steps(50) 1s 1 normal both, 
+    blinkingCursor 500ms steps(50) infinite normal;
+}
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+@keyframes blinkingCursor{
+  from { border-right-color: rgba(255,255,255,.75); }
+  to { border-right-color: transparent; }
+} */
+
+
+
+
+
+
