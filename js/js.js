@@ -178,6 +178,12 @@ if (poliv && poliv2) {
   poliv.addEventListener('mousedown', (e) => {
     e.preventDefault();
     isDragging = true;
+    const sound2 = document.getElementById('watering');
+    sound2.volume=0.3;
+          if (sound2) {
+              sound2.currentTime = 0;
+              sound2.play().catch(e => console.log('ошибка!', e));
+    }
     poliv.style.opacity = '0';
     poliv2.style.opacity = '1';
     poliv2.style.position = 'fixed';
@@ -263,6 +269,14 @@ if (potions.length > 0) {
         'img/potion_purple.svg'
     ];
     
+        function shakeFlask(flaskElement) {
+        console.log('Трясем!', flaskElement);
+        flaskElement.classList.add('shaking');
+        setTimeout(() => {
+            flaskElement.classList.remove('shaking');
+        }, 300);
+    }
+
     function updatePotions() {
       
         potions.forEach((potion, index) => {
@@ -328,6 +342,20 @@ if (potions.length > 0) {
                 [itemsOrder[draggedIndex], itemsOrder[targetIndex]] = 
                 [itemsOrder[targetIndex], itemsOrder[draggedIndex]];
                 updatePotions();
+
+                const sound = document.getElementById('potion_sound');
+                if (sound) {
+                    sound.currentTime = 0;
+                    sound.play().catch(e => console.log('ошибка!', e));
+                }
+
+
+                console.log('Должно трястись!'); 
+                shakeFlask(this);
+                if (draggedElement) {
+                    shakeFlask(draggedElement);
+                }
+
             }
             
             if (clone) {
@@ -354,4 +382,67 @@ if (potions.length > 0) {
         draggedIndex = null;
         draggedElement = null;
     });}
+
+
+
+
+    const close_button = document.querySelector('.close_button');
+    const game3 = document.querySelector('.game3');
+    const instruments = document.querySelector('.instruments');
+
+    close_button.addEventListener('click', function() {
+        game3.style.display = 'none';
+
+        document.querySelector('.black1_square').style.opacity = '0';
+
+    });
+
+    instruments.addEventListener('click', function() {
+        game3.style.display = 'block';
+        document.querySelector('.black1_square').style.opacity = '1';
+    });
+
+
+
+const rezak = document.querySelector('.rezak');
+const rezak2 = document.querySelector('.rezak2');
+
+if (rezak && rezak2) {
+  let isDragging = false;
+  rezak.draggable = false;
+
+  rezak.addEventListener('mousedown', (e) => {
+    e.preventDefault();
+    isDragging = true;
+    rezak.style.opacity = '0';
+    rezak2.style.opacity = '1';
+    rezak2.style.position = 'fixed';
+    rezak2.style.marginLeft = '0';
+    rezak2.style.marginTop = '0';
+    rezak2.style.left = e.clientX - rezak2.offsetWidth / 2 + 'px';
+    rezak2.style.top = e.clientY - rezak2.offsetHeight / 2 + 'px';
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    rezak2.style.left = e.clientX - rezak2.offsetWidth / 2 + 'px';
+    rezak2.style.top = e.clientY - rezak2.offsetHeight / 2 + 'px';
+  });
+
+  const stopDrag = () => {
+    if (!isDragging) return;
+    isDragging = false;
+    rezak.style.opacity = '1';
+    rezak2.style.opacity = '0';
+    rezak2.style.left = '';
+    rezak2.style.top = '';
+    rezak2.style.position = '';
+    rezak2.style.marginLeft = '';
+    rezak2.style.marginTop = '';
+  };
+  
+  document.addEventListener('mouseup', stopDrag);
+  document.addEventListener('mouseleave', stopDrag);
+}
+
 });
