@@ -409,13 +409,20 @@ const rezak2 = document.querySelector('.rezak2');
 const piece_glasses = document.querySelectorAll('.piece_glass1, .piece_glass2, .piece_glass3, .piece_glass4');
 const piece_glasses_2 = document.querySelectorAll('.piece_glass1_2, .piece_glass2_2, .piece_glass3_2, .piece_glass4_2');
 
+let isRezakDragging = false;
+
 if (rezak && rezak2) {
-  let isDragging = false;
   rezak.draggable = false;
 
   rezak.addEventListener('mousedown', (e) => {
     e.preventDefault();
-    isDragging = true;
+    isRezakDragging = true;
+    const sound2 = document.getElementById('watering');
+    sound2.volume = 0.3;
+    if (sound2) {
+      sound2.currentTime = 0;
+      sound2.play().catch(e => console.log('ошибка!', e));
+    }
     rezak.style.opacity = '0';
     rezak2.style.opacity = '1';
     rezak2.style.position = 'fixed';
@@ -426,14 +433,14 @@ if (rezak && rezak2) {
   });
 
   document.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
+    if (!isRezakDragging) return;
     rezak2.style.left = e.clientX - rezak2.offsetWidth / 2 + 'px';
     rezak2.style.top = e.clientY - rezak2.offsetHeight / 2 + 'px';
   });
 
   const stopDrag = () => {
-    if (!isDragging) return;
-    isDragging = false;
+    if (!isRezakDragging) return;
+    isRezakDragging = false;
     rezak.style.opacity = '1';
     rezak2.style.opacity = '0';
     rezak2.style.left = '';
@@ -442,62 +449,106 @@ if (rezak && rezak2) {
     rezak2.style.marginLeft = '';
     rezak2.style.marginTop = '';
   };
-  
+
   document.addEventListener('mouseup', stopDrag);
   document.addEventListener('mouseleave', stopDrag);
 }
 
 if (rezak2 && piece_glasses.length > 0) {
-    let cut_progress = [0, 0, 0, 0];
+  let cut_progress = [0, 0, 0, 0];
+  
+  document.addEventListener('mousemove', (e) => {
+    if (!isRezakDragging) return;
+    
+    const rezak2_style = window.getComputedStyle(rezak2);
+    if (rezak2_style.opacity !== '1') return;
+    
+    const rezak2_rect = rezak2.getBoundingClientRect();
+    const tool_x = rezak2_rect.left;
+    const tool_y = rezak2_rect.top;
+    
+    piece_glasses.forEach((piece, index) => {
+      if (piece.classList.contains('cut')) return;
+      
+      const rect = piece.getBoundingClientRect();
+      const border_size = 25;
+      
+      const on_border = (
+        (Math.abs(tool_x - rect.left) < border_size && tool_y > rect.top && tool_y < rect.bottom) ||
+        (Math.abs(tool_x - rect.right) < border_size && tool_y > rect.top && tool_y < rect.bottom) ||
+        (Math.abs(tool_y - rect.top) < border_size && tool_x > rect.left && tool_x < rect.right) ||
+        (Math.abs(tool_y - rect.bottom) < border_size && tool_x > rect.left && tool_x < rect.right)
+      );
+      
+      if (on_border) {
+        piece.style.opacity = '0.7';
+        piece_glasses_2[index].style.transition = 'opacity 0.5s ease';
+        piece_glasses_2[index].style.opacity = '1';
+        
+        cut_progress[index]++;
+        
+        if (cut_progress[index] > 50) {
+          piece.classList.add('cut');
+          piece.style.transition = 'opacity 0.5s ease';
+          piece.style.opacity = '0';
+          
+          piece_glasses_2[index].style.transition = 'transform 0.5s ease';
+          piece_glasses_2[index].style.transform = 'translate(50px, 30px)';
+          
+          const all_cut = Array.from(piece_glasses).every(p => p.classList.contains('cut'));
+          if (all_cut) {
+            console.log('Все осколки вырезаны!');
+          }
+        }
+      } else {
+        if (!piece.classList.contains('cut')) {
+          piece.style.opacity = '1';
+        }
+      }
+    });
+  });
+}
+
+const pieces = document.querySelectorAll('.piece_glass1_2, .piece_glass2_2, .piece_glass3_2, .piece_glass4_2');
+const taken_pieces = document.querySelectorAll('.piece_glass_taken1, .piece_glass_taken2, .piece_glass_taken3, .piece_glass_taken4');
+
+pieces.forEach((piece, index) => {
+    let isDragging = false;
+    let taken = taken_pieces[index];
+    
+    piece.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+        isDragging = true;
+        
+        piece.style.opacity = '0';
+        taken.style.opacity = '1';
+        taken.style.position = 'fixed';
+        taken.style.marginLeft = '0';
+        taken.style.marginTop = '0';
+        taken.style.left = e.clientX - taken.offsetWidth / 2 + 'px';
+        taken.style.top = e.clientY - taken.offsetHeight / 2 + 'px';
+    });
     
     document.addEventListener('mousemove', (e) => {
-        const rezak2_style = window.getComputedStyle(rezak2);
-        if (rezak2_style.opacity !== '1') return;
-        
-        const rezak2_rect = rezak2.getBoundingClientRect();
-        const tool_x = rezak2_rect.left;
-        const tool_y = rezak2_rect.top;
-        
-        piece_glasses.forEach((piece, index) => {
-            if (piece.classList.contains('cut')) return;
-            
-            const rect = piece.getBoundingClientRect();
-            const border_size = 25;
-            
-            const on_border = (
-                (Math.abs(tool_x - rect.left) < border_size && tool_y > rect.top && tool_y < rect.bottom) ||
-                (Math.abs(tool_x - rect.right) < border_size && tool_y > rect.top && tool_y < rect.bottom) ||
-                (Math.abs(tool_y - rect.top) < border_size && tool_x > rect.left && tool_x < rect.right) ||
-                (Math.abs(tool_y - rect.bottom) < border_size && tool_x > rect.left && tool_x < rect.right)
-            );
-            
-            if (on_border) {
-                piece.style.opacity = '0.7';
-                piece_glasses_2[index].style.transition = 'opacity 0.5s ease';
-                piece_glasses_2[index].style.opacity = '1';
-                
-                cut_progress[index]++;
-                
-                if (cut_progress[index] > 50) {
-                    piece.classList.add('cut');
-                    piece.style.transition = 'opacity 0.5s ease';
-                    piece.style.opacity = '0';
-                    
-                    piece_glasses_2[index].style.transition = 'transform 0.5s ease';
-                    piece_glasses_2[index].style.transform = 'translate(50px, 30px)';
-                    
-                    const all_cut = Array.from(piece_glasses).every(p => p.classList.contains('cut'));
-                    if (all_cut) {
-                        console.log('Все осколки вырезаны!');
-                    }
-                }
-            } else {
-                if (!piece.classList.contains('cut')) {
-                    piece.style.opacity = '1';
-                }
-            }
-        });
+        if (!isDragging) return;
+        taken.style.left = e.clientX - taken.offsetWidth / 2 + 'px';
+        taken.style.top = e.clientY - taken.offsetHeight / 2 + 'px';
     });
-}
+    
+    const stopDrag = () => {
+        if (!isDragging) return;
+        isDragging = false;
+        piece.style.opacity = '1';
+        taken.style.opacity = '0';
+        taken.style.left = '';
+        taken.style.top = '';
+        taken.style.position = 'absolute';
+        taken.style.marginLeft = '';
+        taken.style.marginTop = '';
+    };
+    
+    document.addEventListener('mouseup', stopDrag);
+    document.addEventListener('mouseleave', stopDrag);
+});
 
 });
