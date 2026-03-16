@@ -406,6 +406,8 @@ if (potions.length > 0) {
 
 const rezak = document.querySelector('.rezak');
 const rezak2 = document.querySelector('.rezak2');
+const piece_glasses = document.querySelectorAll('.piece_glass1, .piece_glass2, .piece_glass3, .piece_glass4');
+const piece_glasses_2 = document.querySelectorAll('.piece_glass1_2, .piece_glass2_2, .piece_glass3_2, .piece_glass4_2');
 
 if (rezak && rezak2) {
   let isDragging = false;
@@ -443,6 +445,59 @@ if (rezak && rezak2) {
   
   document.addEventListener('mouseup', stopDrag);
   document.addEventListener('mouseleave', stopDrag);
+}
+
+if (rezak2 && piece_glasses.length > 0) {
+    let cut_progress = [0, 0, 0, 0];
+    
+    document.addEventListener('mousemove', (e) => {
+        const rezak2_style = window.getComputedStyle(rezak2);
+        if (rezak2_style.opacity !== '1') return;
+        
+        const rezak2_rect = rezak2.getBoundingClientRect();
+        const tool_x = rezak2_rect.left;
+        const tool_y = rezak2_rect.top;
+        
+        piece_glasses.forEach((piece, index) => {
+            if (piece.classList.contains('cut')) return;
+            
+            const rect = piece.getBoundingClientRect();
+            const border_size = 25;
+            
+            const on_border = (
+                (Math.abs(tool_x - rect.left) < border_size && tool_y > rect.top && tool_y < rect.bottom) ||
+                (Math.abs(tool_x - rect.right) < border_size && tool_y > rect.top && tool_y < rect.bottom) ||
+                (Math.abs(tool_y - rect.top) < border_size && tool_x > rect.left && tool_x < rect.right) ||
+                (Math.abs(tool_y - rect.bottom) < border_size && tool_x > rect.left && tool_x < rect.right)
+            );
+            
+            if (on_border) {
+                piece.style.opacity = '0.7';
+                piece_glasses_2[index].style.transition = 'opacity 0.5s ease';
+                piece_glasses_2[index].style.opacity = '1';
+                
+                cut_progress[index]++;
+                
+                if (cut_progress[index] > 50) {
+                    piece.classList.add('cut');
+                    piece.style.transition = 'opacity 0.5s ease';
+                    piece.style.opacity = '0';
+                    
+                    piece_glasses_2[index].style.transition = 'transform 0.5s ease';
+                    piece_glasses_2[index].style.transform = 'translate(50px, 30px)';
+                    
+                    const all_cut = Array.from(piece_glasses).every(p => p.classList.contains('cut'));
+                    if (all_cut) {
+                        console.log('Все осколки вырезаны!');
+                    }
+                }
+            } else {
+                if (!piece.classList.contains('cut')) {
+                    piece.style.opacity = '1';
+                }
+            }
+        });
+    });
 }
 
 });

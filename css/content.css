@@ -747,6 +747,46 @@ html, body {
     z-index: 4003;
 }
 
+.piece_glass1_2{
+    width: 9.39vw;
+    height: 9.10vw;
+    position: absolute;
+    margin-left: 15.47%;
+    margin-top: 13.3%;
+    z-index: 4004;
+    opacity: 0;
+}
+
+.piece_glass2_2{
+    width: 9.31vw;
+    height: 9.03vw;
+    position: absolute;
+    margin-left: 16.5%;
+    margin-top: 43%;
+    z-index: 4004;
+    opacity: 0;
+}
+
+.piece_glass3_2{
+    width: 9.10vw;
+    height: 9.10vw;
+    position: absolute;
+    margin-left: 51.9%;
+    margin-top: 14.7%;
+    z-index: 4004;
+    opacity: 0;
+}
+
+.piece_glass4_2{
+    width: 8.89vw;
+    height: 9.38vw;
+    position: absolute;
+    margin-left: 53%;
+    margin-top: 43.2%;
+    z-index: 4004;
+    opacity: 0;
+}
+
 .close_button{
     width: 3.75vw;
     height: 3.75vw;
@@ -765,7 +805,14 @@ html, body {
     transition: opacity 2s ease-in-out;
 }
 
+.glass_outline{
+  filter: drop-shadow(0 0 0.4vw #a855f7);
+}
 
+.glass_cut{
+  transform: translateX(3vw);
+  transition: transform 0.4s ease;
+}
 
 
 
