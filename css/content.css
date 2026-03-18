@@ -143,10 +143,27 @@ html, body {
     position: relative;
 } 
 
+.background4{
+    position: absolute;
+    width: 100vw;
+    height: 79.24vw;
+    object-fit: cover;
+    margin-top: -15%;
+    display: block;
+}
+
+.section4{
+    margin-top: -54.5%;
+    width: 100%;
+    height: 60vw;
+    position: absolute;
+    
+} 
+
 .section3{
     margin-top: -113%;
     width: 100%;
-    height: 470vw;
+    height: 235.1vw;
     position: relative;
     background-color: #C4CDFA;
 } 
