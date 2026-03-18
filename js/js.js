@@ -662,4 +662,14 @@ pieces.forEach((piece, index) => {
     document.addEventListener('mouseleave', stopDrag);
 });
 
+ const girl3 = document.querySelector('.girl_open');
+  if (girl3) {
+    setInterval(() => {
+      girl3.style.opacity = '0';
+      setTimeout(() => {
+        girl3.style.opacity = '1';
+      }, 200);
+    }, 2000);
+  }
+
 });

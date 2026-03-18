@@ -5,25 +5,26 @@
 }
 
 
-html, body {
+html,
+body {
     width: 100%;
     overflow-x: hidden;
 }
 
-.section1{
+.section1 {
     width: 100%;
     height: 66vw;
     position: relative;
-} 
+}
 
-.back_screen1{
+.back_screen1 {
     position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.floor_screen1{
+.floor_screen1 {
     width: 22.08vw;
     height: 14.44vw;
     position: absolute;
@@ -32,16 +33,24 @@ html, body {
 }
 
 @keyframes light {
-    0% {transform: translateX(0) translateY(0);}
-    50% {transform: translateX(-5vw) translateY(-1vw);}
-    100% {transform: translateX(0) translateY(0); }
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-5vw) translateY(-1vw);
+    }
+
+    100% {
+        transform: translateX(0) translateY(0);
+    }
 }
 
 
-.poliv{
+.poliv {
     width: 4.72vw;
-    height: 6.04vw; 
-    cursor:pointer;
+    height: 6.04vw;
+    cursor: pointer;
     margin-left: 83%;
     margin-top: 30.2%;
     position: absolute;
@@ -50,10 +59,10 @@ html, body {
 }
 
 
-.poliv2{
+.poliv2 {
     width: 10.42vw;
     height: 11.39vw;
-    cursor:pointer;
+    cursor: pointer;
     margin-left: 83%;
     margin-top: 30.2%;
     position: absolute;
@@ -63,7 +72,7 @@ html, body {
     pointer-events: none;
 }
 
-.hang1{
+.hang1 {
     width: 7.85vw;
     height: 27.64vw;
     margin-left: 49%;
@@ -75,7 +84,7 @@ html, body {
 
 }
 
-.hang2{
+.hang2 {
     width: 8.54vw;
     height: 21.67vw;
     margin-left: 58.8%;
@@ -86,7 +95,7 @@ html, body {
     z-index: 5;
 }
 
-.girl2{
+.girl2 {
     width: 15.86vw;
     height: 36.22vw;
     margin-left: 18%;
@@ -95,7 +104,7 @@ html, body {
     z-index: 5;
 }
 
-.girl1{
+.girl1 {
     width: 15.86vw;
     height: 36.22vw;
     margin-left: 18%;
@@ -104,7 +113,7 @@ html, body {
     z-index: 5;
 }
 
-.girly{
+.girly {
     width: 17.56vw;
     height: 37.83vw;
     margin-left: 17%;
@@ -117,13 +126,14 @@ html, body {
     animation: blinking 2s infinite steps(1);
 }
 
-.black_square{
-    width: 100%;
+.black_square {
     position: absolute;
     z-index: 10000000;
     opacity: 0;
     pointer-events: none;
     transition: opacity 2s ease-in-out;
+    width: 100vw;
+    height: 297.08vw;
 }
 
 .light {
@@ -136,14 +146,14 @@ html, body {
     animation: light1 4s ease-in-out infinite;
 }
 
-.section2{
+.section2 {
     margin-top: -10%;
     width: 100%;
     height: 120vw;
     position: relative;
-} 
+}
 
-.background4{
+.background4 {
     position: absolute;
     width: 100vw;
     height: 79.24vw;
@@ -152,57 +162,54 @@ html, body {
     display: block;
 }
 
-.section4{
+.section4 {
     margin-top: -54.5%;
     width: 100%;
-    height: 60vw;
+    height: 63vw;
     position: absolute;
-    
-} 
 
-.section3{
+}
+
+.section3 {
     margin-top: -113%;
     width: 100%;
     height: 235.1vw;
     position: relative;
     background-color: #C4CDFA;
-} 
-
-:root {
-  --scroll-progress: 0;
 }
 
-.flower1{
+:root {
+    --scroll-progress: 0;
+}
+
+.flower1 {
     width: 35.83vw;
     height: 35.56vw;
     margin-top: -4%;
     margin-left: -12%;
     position: absolute;
-    transition: transform 0.1s linear; 
+    transition: transform 0.1s linear;
     will-change: transform;
     transform-origin: center center;
     z-index: 40000;
     transform:
-        translateX(calc((1 - abs(1 - var(--scroll-progress) * 2)) * 20vw))
-        translateY(calc(var(--scroll-progress) * 10vw))
-        rotate(calc(var(--scroll-progress) * 220deg))
-        scale(calc(1 + (1 - abs(1 - var(--scroll-progress) * 2)) * 1.5));
+        translateX(calc((1 - abs(1 - var(--scroll-progress) * 2)) * 20vw)) translateY(calc(var(--scroll-progress) * 10vw)) rotate(calc(var(--scroll-progress) * 220deg)) scale(calc(1 + (1 - abs(1 - var(--scroll-progress) * 2)) * 1.5));
 }
 
-.flower1_1{
+.flower1_1 {
     width: 35.83vw;
     height: 35.56vw;
     margin-top: -4%;
     margin-left: -12%;
     position: absolute;
-    transition: transform 0.1s linear; 
+    transition: transform 0.1s linear;
     will-change: transform;
     transform-origin: center center;
     z-index: 30000;
     transform: rotate(calc(var(--scroll-progress) * 40deg));
 }
 
-.flower2{
+.flower2 {
     width: 29.17vw;
     height: 28.89vw;
     margin-top: -2%;
@@ -210,13 +217,10 @@ html, body {
     position: absolute;
     z-index: 30000;
     transform:
-        translateX(calc((1 - abs(1 - var(--scroll-progress) * 2)) * -3vw))
-        translateY(calc(var(--scroll-progress) * 10vw))
-        rotate(calc(var(--scroll-progress) * 280deg))
-        scale(calc(1 + (1 - abs(1 - var(--scroll-progress) * 2)) * 0.4));
+        translateX(calc((1 - abs(1 - var(--scroll-progress) * 2)) * -3vw)) translateY(calc(var(--scroll-progress) * 10vw)) rotate(calc(var(--scroll-progress) * 280deg)) scale(calc(1 + (1 - abs(1 - var(--scroll-progress) * 2)) * 0.4));
 }
 
-.flower2_1{
+.flower2_1 {
     width: 29.17vw;
     height: 28.89vw;
     margin-top: -2%;
@@ -224,11 +228,10 @@ html, body {
     position: absolute;
     z-index: 30000;
     transform:
-        rotate(calc(var(--scroll-progress) * -80deg))
-        scale(calc(1 + (1 - abs(1 - var(--scroll-progress) * 2)) * 0.8));
+        rotate(calc(var(--scroll-progress) * -80deg)) scale(calc(1 + (1 - abs(1 - var(--scroll-progress) * 2)) * 0.8));
 }
 
-.flower3{
+.flower3 {
     width: 35.63vw;
     height: 35.97vw;
     margin-top: -2%;
@@ -237,13 +240,10 @@ html, body {
     position: absolute;
     z-index: 30000;
     transform:
-        translateX(calc((1 - abs(1 - var(--scroll-progress) * 2)) * 20vw))
-        translateY(calc(var(--scroll-progress) * 10vw))
-        rotate(calc(var(--scroll-progress) * -120deg))
-        scale(calc(1 + (1 - abs(1 - var(--scroll-progress) * 2)) * 1.5));
+        translateX(calc((1 - abs(1 - var(--scroll-progress) * 2)) * 20vw)) translateY(calc(var(--scroll-progress) * 10vw)) rotate(calc(var(--scroll-progress) * -120deg)) scale(calc(1 + (1 - abs(1 - var(--scroll-progress) * 2)) * 1.5));
 }
 
-.flower3_1{
+.flower3_1 {
     width: 35.63vw;
     height: 35.97vw;
     margin-top: 0%;
@@ -251,11 +251,10 @@ html, body {
     position: absolute;
     z-index: 10000;
     transform:
-        rotate(calc(var(--scroll-progress) * -90deg))
-        scale(calc(1 + (1 - abs(1 - var(--scroll-progress) * 2)) * 0.7));
+        rotate(calc(var(--scroll-progress) * -90deg)) scale(calc(1 + (1 - abs(1 - var(--scroll-progress) * 2)) * 0.7));
 }
 
-.flower4{
+.flower4 {
     width: 29.17vw;
     height: 28.89vw;
     margin-top: 3%;
@@ -263,26 +262,22 @@ html, body {
     position: absolute;
     z-index: 30000;
     transform:
-        translateX(calc((1 - abs(1 - var(--scroll-progress) * 2)) * -5vw))
-        translateY(calc(var(--scroll-progress) * 10vw))
-        rotate(calc(var(--scroll-progress) * 100deg))
-        scale(calc(1 + (1 - abs(1 - var(--scroll-progress) * 2)) * 0.8));
+        translateX(calc((1 - abs(1 - var(--scroll-progress) * 2)) * -5vw)) translateY(calc(var(--scroll-progress) * 10vw)) rotate(calc(var(--scroll-progress) * 100deg)) scale(calc(1 + (1 - abs(1 - var(--scroll-progress) * 2)) * 0.8));
 }
 
-.flower4_1{
+.flower4_1 {
     width: 40.17vw;
     height: 40.89vw;
     margin-top: 0%;
-    rotate:40deg;
+    rotate: 40deg;
     margin-left: 53%;
     position: absolute;
     z-index: 10000;
     transform:
-        rotate(calc(var(--scroll-progress) * 200deg))
-        scale(calc(1 + (1 - abs(1 - var(--scroll-progress) * 2)) * 0.9));
+        rotate(calc(var(--scroll-progress) * 200deg)) scale(calc(1 + (1 - abs(1 - var(--scroll-progress) * 2)) * 0.9));
 }
 
-.flower5{
+.flower5 {
     width: 37.01vw;
     height: 35.56vw;
     margin-top: -4%;
@@ -290,13 +285,10 @@ html, body {
     position: absolute;
     z-index: 30000;
     transform:
-        translateX(calc((1 - abs(1 - var(--scroll-progress) * 2)) * -5vw))
-        translateY(calc(var(--scroll-progress) * 10vw))
-        rotate(calc(var(--scroll-progress) * 200deg))
-        scale(calc(1 + (1 - abs(1 - var(--scroll-progress) * 2)) * 0.8));
+        translateX(calc((1 - abs(1 - var(--scroll-progress) * 2)) * -5vw)) translateY(calc(var(--scroll-progress) * 10vw)) rotate(calc(var(--scroll-progress) * 200deg)) scale(calc(1 + (1 - abs(1 - var(--scroll-progress) * 2)) * 0.8));
 }
 
-.textik1{
+.textik1 {
     margin-left: 15.4%;
     margin-top: -61.9%;
     width: 36vw;
@@ -311,7 +303,7 @@ html, body {
 
 }
 
-.textik2{
+.textik2 {
     margin-left: 15.4%;
     margin-top: 38.3%;
     width: 36vw;
@@ -326,7 +318,7 @@ html, body {
 
 }
 
-.dialog_closed{
+.dialog_closed {
     width: 7.57vw;
     height: 7.43vw;
     position: absolute;
@@ -337,7 +329,7 @@ html, body {
     pointer-events: visible;
 }
 
-.dialog_opened{
+.dialog_opened {
     width: 7.57vw;
     height: 7.43vw;
     position: absolute;
@@ -350,29 +342,29 @@ html, body {
 
 
 .text {
-  position: absolute;
-  margin-left: 12%;
-  margin-top: -65%;
-  width: 43.61vw;
-  height: 13.33vw;
-  z-index: 1200;
-  transition: opacity 0.35s ease;
-  pointer-events: none;
+    position: absolute;
+    margin-left: 12%;
+    margin-top: -65%;
+    width: 43.61vw;
+    height: 13.33vw;
+    z-index: 1200;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
 }
 
 .text2 {
-  position: absolute;
-  margin-left: 12%;
-  margin-top: 35%;
-  width: 43.61vw;
-  height: 13.33vw;
-  z-index: 10000;
-  transition: opacity 0.35s ease;
-  pointer-events: none;
+    position: absolute;
+    margin-left: 12%;
+    margin-top: 35%;
+    width: 43.61vw;
+    height: 13.33vw;
+    z-index: 10000;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
 }
 
 
-.flower_small{
+.flower_small {
     width: 18.47vw;
     height: 38.33vw;
     margin-top: 7%;
@@ -380,10 +372,10 @@ html, body {
     position: absolute;
     transform-origin: bottom;
     animation: fl 3s infinite alternate ease-in-out;
-     z-index: 100000000;
+    z-index: 100000000;
 }
 
-.flower_grow{
+.flower_grow {
     width: 23.61vw;
     height: 44.65vw;
     margin-top: 0.67%;
@@ -395,14 +387,14 @@ html, body {
     z-index: 100000000;
 }
 
-.back_screen3{
+.back_screen3 {
     width: 100vw;
     height: 163.75vw;
     position: absolute;
     margin-top: 14%;
 }
 
-.dialog_closed2{
+.dialog_closed2 {
     width: 7.57vw;
     height: 7.43vw;
     position: absolute;
@@ -413,7 +405,7 @@ html, body {
     pointer-events: visible;
 }
 
-.dialog_opened2{
+.dialog_opened2 {
     width: 7.57vw;
     height: 7.43vw;
     position: absolute;
@@ -426,7 +418,7 @@ html, body {
 }
 
 
-.potion_pink{
+.potion_pink {
     width: 5.9vw;
     height: 13.20vw;
 }
@@ -441,7 +433,7 @@ html, body {
     height: 9.72vw;
 } */
 
-.potion_pink1{
+.potion_pink1 {
     margin-top: 52.4%;
     margin-left: 13%;
     z-index: 90000;
@@ -449,7 +441,7 @@ html, body {
     cursor: pointer;
 }
 
-.potion_pink2{
+.potion_pink2 {
     margin-top: 52.4%;
     margin-left: 77.5%;
     z-index: 90000;
@@ -457,7 +449,7 @@ html, body {
     cursor: pointer;
 }
 
-.potion_pink3{
+.potion_pink3 {
     margin-top: 68.5%;
     margin-left: 29.5%;
     z-index: 90000;
@@ -465,7 +457,7 @@ html, body {
     cursor: pointer;
 }
 
-.potion_pink4{
+.potion_pink4 {
     margin-top: 84.6%;
     margin-left: 46.5%;
     z-index: 90000;
@@ -473,7 +465,7 @@ html, body {
     cursor: pointer;
 }
 
-.potion_pink5{
+.potion_pink5 {
     margin-top: 84.6%;
     margin-left: 77.5%;
     z-index: 90000;
@@ -482,7 +474,7 @@ html, body {
 }
 
 
-.potion_blue1{
+.potion_blue1 {
     margin-top: 52.4%;
     margin-left: 29.5%;
     z-index: 90000;
@@ -490,7 +482,7 @@ html, body {
     cursor: pointer;
 }
 
-.potion_blue2{
+.potion_blue2 {
     margin-top: 52.4%;
     margin-left: 46.5%;
     z-index: 90000;
@@ -498,7 +490,7 @@ html, body {
     cursor: pointer;
 }
 
-.potion_blue3{
+.potion_blue3 {
     margin-top: 68.5%;
     margin-left: 46.5%;
     z-index: 90000;
@@ -506,7 +498,7 @@ html, body {
     cursor: pointer;
 }
 
-.potion_blue4{
+.potion_blue4 {
     margin-top: 68.5%;
     margin-left: 62.5%;
     z-index: 90000;
@@ -514,7 +506,7 @@ html, body {
     cursor: pointer;
 }
 
-.potion_blue5{
+.potion_blue5 {
     margin-top: 84.6%;
     margin-left: 13%;
     z-index: 90000;
@@ -522,7 +514,7 @@ html, body {
     cursor: pointer;
 }
 
-.potion_purple1{
+.potion_purple1 {
     margin-top: 52.4%;
     margin-left: 62.5%;
     z-index: 90000;
@@ -530,7 +522,7 @@ html, body {
     cursor: pointer;
 }
 
-.potion_purple2{
+.potion_purple2 {
     margin-top: 68.5%;
     margin-left: 13%;
     z-index: 90000;
@@ -538,7 +530,7 @@ html, body {
     cursor: pointer;
 }
 
-.potion_purple3{
+.potion_purple3 {
     margin-top: 68.5%;
     margin-left: 77.5%;
     z-index: 90000;
@@ -546,7 +538,7 @@ html, body {
     cursor: pointer;
 }
 
-.potion_purple4{
+.potion_purple4 {
     margin-top: 84.6%;
     margin-left: 29.5%;
     z-index: 90000;
@@ -554,7 +546,7 @@ html, body {
     cursor: pointer;
 }
 
-.potion_purple5{
+.potion_purple5 {
     margin-top: 84.6%;
     margin-left: 62.5%;
     z-index: 9000;
@@ -563,7 +555,7 @@ html, body {
 }
 
 
-.table{
+.table {
     margin-top: 123.3%;
     position: absolute;
     width: 92.99vw;
@@ -571,7 +563,7 @@ html, body {
     margin-left: 3.49%;
 }
 
-.bochka{
+.bochka {
     margin-top: 146.3%;
     position: absolute;
     width: 26.81vw;
@@ -581,7 +573,7 @@ html, body {
 }
 
 
-.banochki{
+.banochki {
     width: 82vw;
     height: 27vw;
     position: absolute;
@@ -592,7 +584,7 @@ html, body {
 }
 
 
-.banka1{
+.banka1 {
     width: 7.71vw;
     height: 11.04vw;
     margin-top: 1%;
@@ -602,7 +594,7 @@ html, body {
     animation: banka1 0.5s linear ease-in-out;
 }
 
-.banka_blue{
+.banka_blue {
     width: 6.71vw;
     height: 10.04vw;
     margin-top: 2.8%;
@@ -611,7 +603,7 @@ html, body {
     cursor: pointer;
 }
 
-.banka2{
+.banka2 {
     width: 7.85vw;
     height: 11.25vw;
     margin-top: 1%;
@@ -620,7 +612,7 @@ html, body {
     cursor: pointer;
 }
 
-[data-index]{
+[data-index] {
     width: 10vw;
     height: 14vw;
     display: flex;
@@ -667,13 +659,13 @@ html, body {
     cursor: pointer;
 }
 
-        
+
 .shaking {
     animation: shake 0.3s ease-in-out;
 }
 
 
-.game3{
+.game3 {
     position: absolute;
     z-index: 40000000000;
     margin-top: 106.7%;
@@ -685,7 +677,7 @@ html, body {
 }
 
 
-.steklo{
+.steklo {
     margin-left: 4.5%;
     margin-top: 4%;
     z-index: 4001;
@@ -694,26 +686,26 @@ html, body {
     height: 37.99vw;
 }
 
-.rezak{
+.rezak {
     position: absolute;
     width: 4.58vw;
-    height: 37.08vw; 
+    height: 37.08vw;
     margin-left: 86.7%;
     margin-top: 4.6%;
     z-index: 4001;
 }
 
-.rezak2{
+.rezak2 {
     position: absolute;
     width: 30.28vw;
-    height: 27.71vw; 
+    height: 27.71vw;
     margin-left: 86.7%;
     margin-top: 4.6%;
     z-index: 400000000000;
     opacity: 0;
 }
 
-.done_glass1{
+.done_glass1 {
     width: 14.58vw;
     height: 14.51vw;
     position: absolute;
@@ -722,7 +714,7 @@ html, body {
     z-index: 4003;
 }
 
-.done_glass2{
+.done_glass2 {
     width: 14.51vw;
     height: 14.51vw;
     position: absolute;
@@ -731,7 +723,7 @@ html, body {
     z-index: 4003;
 }
 
-.done_glass3{
+.done_glass3 {
     width: 14.51vw;
     height: 14.58vw;
     position: absolute;
@@ -741,7 +733,7 @@ html, body {
 }
 
 
-.done_glass4{
+.done_glass4 {
     width: 14.51vw;
     height: 14.58vw;
     position: absolute;
@@ -750,7 +742,7 @@ html, body {
     z-index: 4003;
 }
 
-.piece_glass1{
+.piece_glass1 {
     width: 9.39vw;
     height: 9.10vw;
     position: absolute;
@@ -759,7 +751,7 @@ html, body {
     z-index: 4003;
 }
 
-.piece_glass2{
+.piece_glass2 {
     width: 9.31vw;
     height: 9.03vw;
     position: absolute;
@@ -768,7 +760,7 @@ html, body {
     z-index: 4003;
 }
 
-.piece_glass3{
+.piece_glass3 {
     width: 9.10vw;
     height: 9.10vw;
     position: absolute;
@@ -777,7 +769,7 @@ html, body {
     z-index: 4003;
 }
 
-.piece_glass4{
+.piece_glass4 {
     width: 8.89vw;
     height: 9.38vw;
     position: absolute;
@@ -786,7 +778,7 @@ html, body {
     z-index: 4003;
 }
 
-.piece_glass1_2{
+.piece_glass1_2 {
     width: 9.39vw;
     height: 9.10vw;
     position: absolute;
@@ -797,7 +789,7 @@ html, body {
     cursor: grabbing;
 }
 
-.piece_glass2_2{
+.piece_glass2_2 {
     width: 9.31vw;
     height: 9.03vw;
     position: absolute;
@@ -808,7 +800,7 @@ html, body {
     cursor: grabbing;
 }
 
-.piece_glass3_2{
+.piece_glass3_2 {
     width: 9.10vw;
     height: 9.10vw;
     position: absolute;
@@ -819,7 +811,7 @@ html, body {
     cursor: grabbing;
 }
 
-.piece_glass4_2{
+.piece_glass4_2 {
     width: 8.89vw;
     height: 9.38vw;
     position: absolute;
@@ -830,7 +822,7 @@ html, body {
     cursor: grabbing;
 }
 
-.close_button{
+.close_button {
     width: 3.75vw;
     height: 3.75vw;
     margin-top: -3%;
@@ -838,7 +830,7 @@ html, body {
     position: absolute;
 }
 
-.black1_square{
+.black1_square {
     width: 100%;
     position: absolute;
     z-index: 1000000000;
@@ -848,18 +840,18 @@ html, body {
     transition: opacity 2s ease-in-out;
 }
 
-.glass_outline{
-  filter: drop-shadow(0 0 0.4vw #a855f7);
+.glass_outline {
+    filter: drop-shadow(0 0 0.4vw #a855f7);
 }
 
-.glass_cut{
-  transform: translateX(3vw);
-  transition: transform 0.4s ease;
+.glass_cut {
+    transform: translateX(3vw);
+    transition: transform 0.4s ease;
 }
 
-.piece_glass_taken1{
+.piece_glass_taken1 {
     width: 14.72vw;
-    height: 17.57vw;  
+    height: 17.57vw;
     z-index: 40000000000;
     opacity: 0;
     position: absolute;
@@ -869,9 +861,9 @@ html, body {
     pointer-events: none;
 }
 
-.piece_glass_taken2{
+.piece_glass_taken2 {
     width: 15.76vw;
-    height: 19.44vw; 
+    height: 19.44vw;
     z-index: 40000000000;
     opacity: 0;
     position: absolute;
@@ -881,9 +873,9 @@ html, body {
     pointer-events: none;
 }
 
-.piece_glass_taken3{
+.piece_glass_taken3 {
     width: 15.76vw;
-    height: 19.44vw; 
+    height: 19.44vw;
     z-index: 40000000000;
     opacity: 0;
     position: absolute;
@@ -893,9 +885,9 @@ html, body {
     pointer-events: none;
 }
 
-.piece_glass_taken4{
+.piece_glass_taken4 {
     width: 15.76vw;
-    height: 19.44vw; 
+    height: 19.44vw;
     z-index: 40000000000;
     opacity: 0;
     position: absolute;
@@ -905,8 +897,8 @@ html, body {
     pointer-events: none;
 }
 
-.no_div{
-    width:25vw;
+.no_div {
+    width: 25vw;
     height: 30vw;
     margin-top: 135%;
     margin-left: 73%;
@@ -914,7 +906,7 @@ html, body {
     z-index: 4000000000;
 }
 
-.oskolki1{
+.oskolki1 {
     position: absolute;
     width: 21.46vw;
     height: 6.18vw;
@@ -924,7 +916,7 @@ html, body {
     opacity: 0;
 }
 
-.oskolki2{
+.oskolki2 {
     position: absolute;
     width: 21.46vw;
     height: 8.19vw;
@@ -934,6 +926,20 @@ html, body {
     opacity: 0;
 }
 
+.girl_close {
+    width: 20.49vw;
+    height: 47.36vw;
+    margin-left: 30.72%;
+    margin-top: 14%;
+    position: absolute;
+    z-index: 100000;
+}
 
-
-
+.girl_open {
+    width: 19.93vw;
+    height: 46.81vw;
+    margin-left: 31%;
+    margin-top: 14%;
+    position: absolute;
+    z-index: 1000000;
+}
