@@ -42,31 +42,59 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 
-  const dialogClosed = document.querySelector('.dialog_closed');
-  const dialogOpened = document.querySelector('.dialog_opened');
+  const dialog_closed = document.querySelector('.dialog_closed');
+  const dialog_opened = document.querySelector('.dialog_opened');
   const text = document.querySelector('.text');
   const textik = document.querySelector('.textik1');
   
-  if (dialogClosed && dialogOpened && text && textik) {
-    dialogClosed.style.display = 'none';
-    dialogOpened.style.display = 'block';
+  if (dialog_closed && dialog_opened && text && textik) {
+    dialog_closed.style.display = 'none';
+    dialog_opened.style.display = 'block';
     text.style.display = 'block';
     textik.style.display = 'block';
     
-    dialogOpened.addEventListener('click', function() {
-      dialogOpened.style.display = 'none';
+    dialog_opened.addEventListener('click', function() {
+      dialog_opened.style.display = 'none';
       text.style.display = 'none';
       textik.style.display = 'none';
-      dialogClosed.style.display = 'block';
+      dialog_closed.style.display = 'block';
     });
     
-    dialogClosed.addEventListener('click', function() {
-      dialogClosed.style.display = 'none';
-      dialogOpened.style.display = 'block';
+    dialog_closed.addEventListener('click', function() {
+      dialog_closed.style.display = 'none';
+      dialog_opened.style.display = 'block';
       text.style.display = 'block';
       textik.style.display = 'block';
     });
   }
+
+  const dialog_closed2 = document.querySelector('.dialog_closed2');
+  const dialog_opened2 = document.querySelector('.dialog_opened2');
+  const text2 = document.querySelector('.text2');
+  const textik2 = document.querySelector('.textik2');
+  
+  if (dialog_closed2 && dialog_opened2 && text2 && textik2) {
+    dialog_closed2.style.display = 'none';
+    dialog_opened2.style.display = 'block';
+    text2.style.display = 'block';
+    textik2.style.display = 'block';
+    
+    dialog_opened2.addEventListener('click', function() {
+      dialog_opened2.style.display = 'none';
+      text2.style.display = 'none';
+      textik2.style.display = 'none';
+      dialog_closed2.style.display = 'block';
+    });
+    
+    dialog_closed2.addEventListener('click', function() {
+      dialog_closed2.style.display = 'none';
+      dialog_opened2.style.display = 'block';
+      text2.style.display = 'block';
+      textik2.style.display = 'block';
+    });
+  }
+
+
 
 
 
@@ -416,13 +444,13 @@ if (rezak && rezak2) {
 
   rezak.addEventListener('mousedown', (e) => {
     e.preventDefault();
+            const sound3 = document.getElementById('broken_glass');
+        sound3.volume=0.3;
+          if (sound3) {
+              sound3.currentTime = 0;
+              sound3.play().catch(e => console.log('ошибка!', e));
+          }
     isRezakDragging = true;
-    const sound2 = document.getElementById('watering');
-    sound2.volume = 0.3;
-    if (sound2) {
-      sound2.currentTime = 0;
-      sound2.play().catch(e => console.log('ошибка!', e));
-    }
     rezak.style.opacity = '0';
     rezak2.style.opacity = '1';
     rezak2.style.position = 'fixed';
@@ -436,6 +464,7 @@ if (rezak && rezak2) {
     if (!isRezakDragging) return;
     rezak2.style.left = e.clientX - rezak2.offsetWidth / 2 + 'px';
     rezak2.style.top = e.clientY - rezak2.offsetHeight / 2 + 'px';
+    
   });
 
   const stopDrag = () => {
@@ -469,6 +498,7 @@ if (rezak2 && piece_glasses.length > 0) {
     
     piece_glasses.forEach((piece, index) => {
       if (piece.classList.contains('cut')) return;
+
       
       const rect = piece.getBoundingClientRect();
       const border_size = 25;
@@ -494,6 +524,12 @@ if (rezak2 && piece_glasses.length > 0) {
           
           piece_glasses_2[index].style.transition = 'transform 0.5s ease';
           piece_glasses_2[index].style.transform = 'translate(50px, 30px)';
+            const sound3 = document.getElementById('broken_glass');
+        sound3.volume=0.3;
+          if (sound3) {
+              sound3.currentTime = 0;
+              sound3.play().catch(e => console.log('ошибка!', e));
+          }
           
           const all_cut = Array.from(piece_glasses).every(p => p.classList.contains('cut'));
           if (all_cut) {
@@ -545,6 +581,81 @@ pieces.forEach((piece, index) => {
         taken.style.position = 'absolute';
         taken.style.marginLeft = '';
         taken.style.marginTop = '';
+    };
+    
+    document.addEventListener('mouseup', stopDrag);
+    document.addEventListener('mouseleave', stopDrag);
+});
+
+const no_div = document.querySelector('.no_div');
+const oskolki1 = document.querySelector('.oskolki1');
+const oskolki2 = document.querySelector('.oskolki2');
+let pieces_in_no_div = 0;
+let pieces_added = [false, false, false, false];
+
+pieces.forEach((piece, index) => {
+    let isDragging = false;
+    let taken = taken_pieces[index];
+    let clone = null;
+    
+    piece.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+        isDragging = true;
+        
+        const rect = piece.getBoundingClientRect();
+        
+        clone = taken.cloneNode(true);
+        clone.style.position = 'fixed';
+        clone.style.zIndex = '1000000';
+        clone.style.width = taken.offsetWidth + 'px';
+        clone.style.height = taken.offsetHeight + 'px';
+        clone.style.left = e.clientX - taken.offsetWidth / 2 + 'px';
+        clone.style.top = e.clientY - taken.offsetHeight / 2 + 'px';
+        clone.style.pointerEvents = 'none';
+        document.body.appendChild(clone);
+        
+        piece.style.opacity = '0';
+    });
+    
+    document.addEventListener('mousemove', (e) => {
+        if (!isDragging || !clone) return;
+        clone.style.left = e.clientX - taken.offsetWidth / 2 + 'px';
+        clone.style.top = e.clientY - taken.offsetHeight / 2 + 'px';
+    });
+    
+    const stopDrag = () => {
+        if (!isDragging || !clone) return;
+        isDragging = false;
+        
+        const clone_rect = clone.getBoundingClientRect();
+        const no_div_rect = no_div.getBoundingClientRect();
+        
+        const is_in_no_div = (
+            clone_rect.left < no_div_rect.right &&
+            clone_rect.right > no_div_rect.left &&
+            clone_rect.top < no_div_rect.bottom &&
+            clone_rect.bottom > no_div_rect.top
+        );
+        
+        if (is_in_no_div && !pieces_added[index]) {
+            pieces_added[index] = true;
+            pieces_in_no_div++;
+            
+            if (pieces_in_no_div >= 2) {
+                oskolki1.style.opacity = '1';
+            }
+            if (pieces_in_no_div >= 4) {
+                oskolki2.style.opacity = '1';
+            }
+            
+            piece.style.display = 'none';
+            taken.style.display = 'none';
+        } else {
+            piece.style.opacity = '1';
+        }
+        
+        clone.remove();
+        clone = null;
     };
     
     document.addEventListener('mouseup', stopDrag);

@@ -294,6 +294,20 @@ html, body {
 
 }
 
+.textik2{
+    margin-left: 15.4%;
+    margin-top: 38.3%;
+    width: 36vw;
+    height: 4vw;
+    position: absolute;
+    z-index: 20000;
+    font-family: "kom-post";
+    color: #686868;
+    line-height: 2.3vw;
+    font-size: 1.66vw;
+    pointer-events: none;
+
+}
 
 .dialog_closed{
     width: 7.57vw;
@@ -303,6 +317,7 @@ html, body {
     margin-left: 1.8%;
     cursor: pointer;
     z-index: 2800;
+    pointer-events: visible;
 }
 
 .dialog_opened{
@@ -313,6 +328,7 @@ html, body {
     margin-left: 1.8%;
     cursor: pointer;
     z-index: 2800;
+    pointer-events: visible;
 }
 
 
@@ -327,6 +343,16 @@ html, body {
   pointer-events: none;
 }
 
+.text2 {
+  position: absolute;
+  margin-left: 12%;
+  margin-top: 35%;
+  width: 43.61vw;
+  height: 13.33vw;
+  z-index: 10000;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
 
 
 .flower_small{
@@ -367,6 +393,7 @@ html, body {
     margin-left: 1.8%;
     cursor: pointer;
     z-index: 2800;
+    pointer-events: visible;
 }
 
 .dialog_opened2{
@@ -378,16 +405,9 @@ html, body {
     display: none;
     cursor: pointer;
     z-index: 1300;
+    pointer-events: visible;
 }
 
-.text2 {
-  position: absolute;
-  margin-left: 12%;
-  margin-top: 35%;
-  width: 43.61vw;
-  height: 13.33vw;
-  z-index: 10000;
-}
 
 .potion_pink{
     width: 5.9vw;
@@ -549,7 +569,8 @@ html, body {
     height: 27vw;
     position: absolute;
     margin-top: 137%;
-    margin-left: 9%;
+    margin-left: 10%;
+    z-index: 10000;
 
 }
 
@@ -865,6 +886,35 @@ html, body {
     margin-top: 43.2%;
     transition: opacity 0.3 ease;
     pointer-events: none;
+}
+
+.no_div{
+    width:25vw;
+    height: 30vw;
+    margin-top: 135%;
+    margin-left: 73%;
+    position: absolute;
+    z-index: 4000000000;
+}
+
+.oskolki1{
+    position: absolute;
+    width: 21.46vw;
+    height: 6.18vw;
+    z-index: 40000000000;
+    margin-left: 75%;
+    margin-top: 147%;
+    opacity: 0;
+}
+
+.oskolki2{
+    position: absolute;
+    width: 21.46vw;
+    height: 8.19vw;
+    z-index: 40000000000;
+    margin-left: 75%;
+    margin-top: 145%;
+    opacity: 0;
 }
 
 
