@@ -29,3 +29,9 @@
     25% { transform: translateX(-3px) rotate(-1deg); }
     75% { transform: translateX(3px) rotate(1deg); }
 }
+
+@keyframes inst {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-4deg); }
+    75% { transform: rotate(4deg); }
+}

@@ -943,3 +943,65 @@ body {
     position: absolute;
     z-index: 1000000;
 }
+
+.pack2{
+    margin-top: 21%;
+    margin-left: 56%;
+    width: 10.07vw;
+    height: 10.76vw;
+    position: absolute;
+    z-index: 100001;
+    cursor: pointer;
+}
+
+.pack1{
+    margin-top: 20%;
+    margin-left: 53%;
+    width: 10.07vw;
+    height: 10.76vw;
+    position: absolute;
+    z-index: 10000;
+    cursor: pointer;
+}
+
+.palka{
+    width: 16.94vw;
+    height: 0.90vw;
+    position: absolute;
+    z-index: 10000;  
+    margin-top: 12.22%;
+    margin-left: 58.86%;   
+}
+
+.inst1{
+    width: 5.21vw;
+    height: 17.36vw;
+    position: absolute;
+    z-index: 999;  
+    margin-top: 1%;
+    margin-left: 58.86%; 
+    animation: inst 4s linear infinite;
+    transform-origin: center;
+}
+
+.inst2{
+    width: 4.86vw;
+    height: 8.13vw;
+    position: absolute;
+    z-index: 999;  
+    margin-top: 8%;
+    margin-left: 64.86%; 
+    animation: inst 4s linear infinite;
+    transform-origin: center;
+}
+
+.inst3{
+    width: 4.86vw;
+    height: 8.13vw;
+    position: absolute;
+    z-index: 999;  
+    margin-top: 8%;
+    margin-left: 70.5%; 
+    animation: inst 4s linear infinite;
+    transform-origin: center;
+}
