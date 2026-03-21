@@ -1039,6 +1039,18 @@ body {
     background-size: cover; 
 }
 
+.game5{
+    margin-top: 10%;
+    margin-left: 30%;
+    width: 41.03vw;
+    height: 49.43vw;
+    position: absolute;
+    z-index: 100000000000;
+    display: none;
+    background-image: url('../img/paper_big.svg');
+    background-size: cover; 
+}
+
 .pack3{
     width: 34.17vw;
     height: 36.6vw;
@@ -1071,4 +1083,68 @@ body {
     position: absolute;
     z-index: 999;  
 
+}
+
+.for_tick1{
+    width: 2.99vw;
+    height: 2.78vw;
+    position: absolute;
+    z-index: 10000;  
+    margin-top: 34%;
+    margin-left: 14%; 
+    cursor: pointer;
+}
+
+.for_tick2{
+    width: 2.99vw;
+    height: 2.78vw;
+    position: absolute;
+    z-index: 10000;  
+    margin-top: 48%;
+    margin-left: 14%; 
+    rotate: 90deg;
+    cursor: pointer;
+}
+
+.for_tick3{
+    width: 2.99vw;
+    height: 2.78vw;
+    position: absolute;
+    z-index: 10000;  
+    margin-top: 63%;
+    margin-left: 14%; 
+    rotate: 180deg;
+    cursor: pointer;
+}
+
+.for_tick4{
+    width: 2.99vw;
+    height: 2.78vw;
+    position: absolute;
+    z-index: 10000;  
+    margin-top: 78%;
+    margin-left: 14%; 
+    rotate: 270deg;
+    cursor: pointer;
+}
+
+.rotate_fl{
+    width: 22.36vw;
+    height: 22.64vw;
+    position: absolute;
+    z-index: 10000;  
+    margin-top: 77%;
+    margin-left: 50%; 
+    animation: rotation 4s linear infinite;
+}
+
+.rotate_fl2{
+    width: 25.36vw;
+    height: 25.64vw;
+    position: absolute;
+    z-index: 10000;  
+    margin-top: 79%;
+    margin-left:8%; 
+    rotate: 150deg;
+    animation: rotation2 4s linear infinite;
 }

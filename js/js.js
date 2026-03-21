@@ -444,12 +444,6 @@ if (rezak && rezak2) {
 
   rezak.addEventListener('mousedown', (e) => {
     e.preventDefault();
-            const sound3 = document.getElementById('broken_glass');
-        sound3.volume=0.3;
-          if (sound3) {
-              sound3.currentTime = 0;
-              sound3.play().catch(e => console.log('ошибка!', e));
-          }
     isRezakDragging = true;
     rezak.style.opacity = '0';
     rezak2.style.opacity = '1';
@@ -672,8 +666,6 @@ pieces.forEach((piece, index) => {
     }, 2000);
   }
 
-
-const paper = document.querySelector('.paper');
 const pack1 = document.querySelector('.pack1');
 const pack2 = document.querySelector('.pack2');
 const game4 = document.querySelector('.game4');
@@ -702,7 +694,15 @@ if (close_button2 && game4) {
   }
 
 
+const paper = document.querySelector('.paper');
+const game5= document.querySelector('.game5')
 
+if (paper && game5) {
+    paper.addEventListener('click', function() {
+        game5.style.display = 'block';
+        document.querySelector('.black2_square').style.opacity = '1';
+    });
+}
 
 
 
@@ -773,6 +773,12 @@ if (canvas3) {
         if (!isDrawing) return;
         ctx.lineTo(e.offsetX, e.offsetY);
         ctx.stroke();
+        const sound4 = document.getElementById('drawing');
+        sound4.volume=0.3;
+              if (sound4) {
+                  sound4.currentTime = 0;
+                  sound4.play().catch(e => console.log('ошибка!', e));
+              }
     });
     canvas3.addEventListener('mouseup', () => isDrawing = false);
     canvas3.addEventListener('mouseout', () => isDrawing = false); 
