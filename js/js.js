@@ -784,5 +784,19 @@ if (canvas3) {
     canvas3.addEventListener('mouseout', () => isDrawing = false); 
 }
 
+const tick_boxes = document.querySelectorAll('.for_tick1, .for_tick2, .for_tick3, .for_tick4');
+const ticks = document.querySelectorAll('.tick1, .tick2, .tick3, .tick4');
+    
+    ticks.forEach(tick => {
+        tick.style.display = 'none';
+    });
+    tick_boxes.forEach((box, index) => {
+        box.addEventListener('click', function() {
+            if (ticks[index] && ticks[index].style.display !== 'block') {
+                ticks[index].style.display = 'block';
+                this.style.pointerEvents = 'none';
+            }
+        });
+    });
 
 });

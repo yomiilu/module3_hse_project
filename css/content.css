@@ -1133,7 +1133,7 @@ body {
     height: 22.64vw;
     position: absolute;
     z-index: 10000;  
-    margin-top: 77%;
+    margin-top: 79%;
     margin-left: 50%; 
     animation: rotation 4s linear infinite;
 }
@@ -1143,8 +1143,46 @@ body {
     height: 25.64vw;
     position: absolute;
     z-index: 10000;  
-    margin-top: 79%;
+    margin-top: 80%;
     margin-left:8%; 
     rotate: 150deg;
-    animation: rotation2 4s linear infinite;
+    animation: rotation2 3s linear infinite;
 }
+
+.tick1{
+    width: 1.53vw;
+    height: 1.88vw;
+    position: absolute;
+    z-index: 10000;  
+    margin-top: 35%;
+    margin-left: 16%; 
+}
+
+.tick2{
+    width: 1.53vw;
+    height: 1.88vw;
+    position: absolute;
+    z-index: 10000;  
+    margin-top: 49%;
+    margin-left: 16%; 
+}
+
+.tick3{
+    width: 1.53vw;
+    height: 1.88vw;
+    position: absolute;
+    z-index: 10000;  
+    margin-top: 64%;
+    margin-left: 16%; 
+}
+
+.tick4{
+    width: 1.53vw;
+    height: 1.88vw;
+    position: absolute;
+    z-index: 10000;  
+    margin-top: 79%;
+    margin-left: 16%; 
+    pointer-events: visible;
+}
+

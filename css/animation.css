@@ -35,3 +35,15 @@
     25% { transform: rotate(-4deg); }
     75% { transform: rotate(4deg); }
 }
+
+@keyframes rotation2 {
+    0% { rotate: 150deg; }
+    50% { rotate: 210deg; }
+    100% { rotate: 150deg; }
+}
+
+@keyframes rotation {
+    0% { rotate: 90deg; }
+    50% { rotate: 130deg; }
+    100% { rotate: 90deg; }
+}
