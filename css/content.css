@@ -840,6 +840,16 @@ body {
     transition: opacity 2s ease-in-out;
 }
 
+.black2_square {
+    width: 100%;
+    position: absolute;
+    z-index: 1000000000;
+    opacity: 0;
+    margin-top: -232.9%;
+    pointer-events: none;
+    transition: opacity 2s ease-in-out;
+}
+
 .glass_outline {
     filter: drop-shadow(0 0 0.4vw #a855f7);
 }
@@ -1004,4 +1014,61 @@ body {
     margin-left: 70.5%; 
     animation: inst 4s linear infinite;
     transform-origin: center;
+}
+
+.paper{
+    width: 14.79vw;
+    height: 15.90vw;
+    position: absolute;
+    z-index: 1000;  
+    margin-top: 12%;
+    margin-left: 80.5%; 
+    cursor: pointer;
+}
+
+.game4{
+    background-color: white;
+    margin-top: 10%;
+    margin-left: 5%;
+    width: 89.5vw;
+    height: 49.31vw;
+    position: absolute;
+    z-index: 10000000000000;
+    display: none;
+    background-image: url('../img/main.svg');
+    background-size: cover; 
+}
+
+.pack3{
+    width: 34.17vw;
+    height: 36.6vw;
+    position: absolute;
+    z-index: 1000;  
+    margin-top: 9%;
+    margin-left: 8%; 
+}
+
+.pack4{
+    width: 34.17vw;
+    height: 36.6vw;
+    position: absolute;
+    z-index: 1000;  
+    margin-top: 9%;
+    margin-left: 53%; 
+}
+
+.close_button2 {
+    width: 3.75vw;
+    height: 3.75vw;
+    margin-top: -2%;
+    margin-left: 97%;
+    position: absolute;
+}
+
+.main{
+    width: 89.5vw;
+    height: 49.31vw;
+    position: absolute;
+    z-index: 999;  
+
 }

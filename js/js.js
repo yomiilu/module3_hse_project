@@ -672,4 +672,111 @@ pieces.forEach((piece, index) => {
     }, 2000);
   }
 
+
+const paper = document.querySelector('.paper');
+const pack1 = document.querySelector('.pack1');
+const pack2 = document.querySelector('.pack2');
+const game4 = document.querySelector('.game4');
+const close_button2 = document.querySelector('.close_button2');
+
+if (close_button2 && game4) {
+    close_button2.addEventListener('click', function() {
+        game4.style.display = 'none';
+        const black1Square = document.querySelector('.black2_square');
+        if (black1Square) black1Square.style.opacity = '0';
+    });
+}
+
+  if (pack1 && game4) {
+      pack1.addEventListener('click', function() {
+          game4.style.display = 'block';
+          document.querySelector('.black2_square').style.opacity = '1';
+      });
+  }
+
+  if (pack2 && game4) {
+      pack2.addEventListener('click', function() {
+          game4.style.display = 'block';
+          document.querySelector('.black2_square').style.opacity = '1';
+      });
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+const canvas2 = document.getElementById('paint');
+if (canvas2) {
+    const ctx = canvas2.getContext('2d');
+    let isDrawing = false;
+    canvas2.width = 200;  
+    canvas2.height = 100; 
+    canvas2.style.width = '200px';  
+    canvas2.style.height = '100px'; 
+    canvas2.style.marginTop = '290px'; 
+    canvas2.style.marginLeft = '260px'; 
+  
+    ctx.lineWidth = 5;
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = '#5B3DA8';
+    
+    canvas2.addEventListener('mousedown', (e) => {
+        isDrawing = true;
+        ctx.beginPath();
+        const sound4 = document.getElementById('drawing');
+        sound4.volume=0.3;
+              if (sound4) {
+                  sound4.currentTime = 0;
+                  sound4.play().catch(e => console.log('ошибка!', e));
+              }
+        ctx.moveTo(e.offsetX, e.offsetY);
+        
+    });
+    canvas2.addEventListener('mousemove', (e) => {
+        if (!isDrawing) return;
+        ctx.lineTo(e.offsetX, e.offsetY);
+        ctx.stroke();
+    });
+    canvas2.addEventListener('mouseup', () => isDrawing = false);
+    canvas2.addEventListener('mouseout', () => isDrawing = false); 
+}
+
+const canvas3 = document.getElementById('paint2');
+if (canvas3) {
+    const ctx = canvas3.getContext('2d');
+    let isDrawing = false;
+    canvas3.width = 200;  
+    canvas3.height = 100; 
+    canvas3.style.width = '200px';  
+    canvas3.style.height = '100px'; 
+    canvas3.style.marginTop = '290px'; 
+    canvas3.style.marginLeft = '395px'; 
+  
+    ctx.lineWidth = 5;
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = '#5B3DA8';
+    canvas3.addEventListener('mousedown', (e) => {
+        isDrawing = true;
+        ctx.beginPath();
+        ctx.moveTo(e.offsetX, e.offsetY);
+    });
+    canvas3.addEventListener('mousemove', (e) => {
+        if (!isDrawing) return;
+        ctx.lineTo(e.offsetX, e.offsetY);
+        ctx.stroke();
+    });
+    canvas3.addEventListener('mouseup', () => isDrawing = false);
+    canvas3.addEventListener('mouseout', () => isDrawing = false); 
+}
+
+
 });
