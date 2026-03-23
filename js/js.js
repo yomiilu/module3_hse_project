@@ -96,6 +96,39 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 
+  const dialog_closed3 = document.querySelector('.dialog_closed3');
+  const dialog_opened3 = document.querySelector('.dialog_opened3');
+  const text3 = document.querySelector('.text3');
+  const textik3 = document.querySelector('.textik3');
+  const textik4 = document.querySelector('.textik4');
+  const text_small3 = document.querySelector('.text_small3');
+
+  
+  if (dialog_closed3 && dialog_opened3 && text3 && textik3 && textik4 && text_small3) {
+    dialog_closed3.style.display = 'none';
+    dialog_opened3.style.display = 'block';
+    text3.style.display = 'block';
+    textik3.style.display = 'block';
+    
+    dialog_opened3.addEventListener('click', function() {
+      dialog_opened3.style.display = 'none';
+      text3.style.display = 'none';
+      textik3.style.display = 'none';
+      dialog_closed3.style.display = 'block';
+      textik4.style.display = 'none';
+      text_small3.style.display = 'none';
+    });
+    
+    dialog_closed3.addEventListener('click', function() {
+      dialog_closed3.style.display = 'none';
+      dialog_opened3.style.display = 'block';
+      text3.style.display = 'block';
+      textik3.style.display = 'block';
+      textik4.style.display = 'block';
+      text_small3.style.display = 'block';
+    });
+  }
+
 
 
 setTimeout(function() {
@@ -262,6 +295,9 @@ document.addEventListener('mousemove', (e) => {
     document.querySelector('.black_square').style.opacity = '0';
   }
 });
+
+
+
 const potions = document.querySelectorAll('[data-index]');
 
 
@@ -377,12 +413,6 @@ if (potions.length > 0) {
                     sound.play().catch(e => console.log('ошибка!', e));
                 }
 
-
-                console.log('Должно трястись!'); 
-                shakeFlask(this);
-                if (draggedElement) {
-                    shakeFlask(draggedElement);
-                }
 
             }
             
@@ -640,6 +670,12 @@ pieces.forEach((piece, index) => {
             }
             if (pieces_in_no_div >= 4) {
                 oskolki2.style.opacity = '1';
+                game3.style.opacity = '0';
+                textik3.style.opacity ='0';
+                text3.style.opacity ='0';
+                textik4.style.opacity ='1';
+                text_small3.style.opacity ='1';
+                document.querySelector('.black1_square').style.opacity = '0';
             }
             
             piece.style.display = 'none';
@@ -696,10 +732,12 @@ if (close_button2 && game4) {
 
 const paper = document.querySelector('.paper');
 const game5= document.querySelector('.game5')
+const game6 = document.querySelector('.game6')
 
 if (paper && game5) {
     paper.addEventListener('click', function() {
         game5.style.display = 'block';
+        game6.style.display = 'block';
         document.querySelector('.black2_square').style.opacity = '1';
     });
 }
@@ -786,6 +824,7 @@ if (canvas3) {
 
 const tick_boxes = document.querySelectorAll('.for_tick1, .for_tick2, .for_tick3, .for_tick4');
 const ticks = document.querySelectorAll('.tick1, .tick2, .tick3, .tick4');
+let counter = 0;
     
     ticks.forEach(tick => {
         tick.style.display = 'none';
@@ -794,7 +833,12 @@ const ticks = document.querySelectorAll('.tick1, .tick2, .tick3, .tick4');
         box.addEventListener('click', function() {
             if (ticks[index] && ticks[index].style.display !== 'block') {
                 ticks[index].style.display = 'block';
+                counter++;
                 this.style.pointerEvents = 'none';
+
+                if (counter === 4){
+                  game5.style.display = 'none';
+                }
             }
         });
     });

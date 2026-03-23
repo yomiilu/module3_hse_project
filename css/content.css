@@ -423,7 +423,7 @@ body {
     height: 13.20vw;
 }
 
-/* .potion_blue{
+.potion_blue{
     width: 9vw;
     height: 11.15vw;
 }
@@ -431,7 +431,7 @@ body {
 .potion_purple{
     width: 7.54vw;
     height: 9.72vw;
-} */
+}
 
 .potion_pink1 {
     margin-top: 52.4%;
@@ -554,6 +554,84 @@ body {
     cursor: pointer;
 }
 
+.dialog_closed3 {
+    width: 7.57vw;
+    height: 7.43vw;
+    position: absolute;
+    margin-top: 107%;
+    margin-left: 1.8%;
+    cursor: pointer;
+    z-index: 2800;
+    pointer-events: visible;
+}
+
+.dialog_opened3 {
+    width: 7.57vw;
+    height: 7.43vw;
+    position: absolute;
+    margin-top: 107%;
+    margin-left: 1.8%;
+    display: none;
+    cursor: pointer;
+    z-index: 1300;
+    pointer-events: visible;
+}
+
+.textik3 {
+    margin-left: 15.4%;
+    margin-top: 109.3%;
+    width: 34vw;
+    height: 4vw;
+    position: absolute;
+    z-index: 20000;
+    font-family: "kom-post";
+    color: #686868;
+    line-height: 2.3vw;
+    font-size: 1.66vw;
+    pointer-events: none;
+
+}
+
+.text3 {
+    position: absolute;
+    margin-left: 12%;
+    margin-top: 106.4%;
+    width: 43.61vw;
+    height: 13.33vw;
+    z-index: 10000;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+}
+
+.text_small3 {
+    position: absolute;
+    margin-left: 12%;
+    margin-top: 106.4%;
+    width: 41.32vw;
+    height: 8.33vw;
+    z-index: 10000;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+    opacity: 0;
+    
+}
+
+
+.textik4 {
+    margin-left: 15.4%;
+    margin-top: 109.3%;
+    width: 34vw;
+    height: 4vw;
+    position: absolute;
+    z-index: 20000;
+    font-family: "kom-post";
+    color: #686868;
+    line-height: 2.3vw;
+    font-size: 1.66vw;
+    pointer-events: none;
+    opacity: 0;
+
+}
 
 .table {
     margin-top: 123.3%;
@@ -591,7 +669,9 @@ body {
     margin-left: 4%;
     position: absolute;
     cursor: pointer;
-    animation: banka1 0.5s linear ease-in-out;
+    pointer-events: visible;
+    z-index: 10000;
+    animation: banka1 2s linear ease-in-out;
 }
 
 .banka_blue {
@@ -1186,3 +1266,14 @@ body {
     pointer-events: visible;
 }
 
+.game6{
+    margin-top: 10%;
+    margin-left: 30%;
+    width: 41.03vw;
+    height: 49.43vw;
+    position: absolute;
+    z-index: 1000000000;
+    display: none;
+    background-image: url('../img/podval.svg');
+    background-size: cover; 
+}
