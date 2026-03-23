@@ -332,6 +332,14 @@ if (potions.length > 0) {
         'img/potion_purple.svg',
         'img/potion_purple.svg'
     ];
+
+        
+    function shakeFlask(flaskElement) {
+        flaskElement.classList.add('shaking');
+        setTimeout(() => {
+            flaskElement.classList.remove('shaking');
+        }, 300);
+    }
     
         function shakeFlask(flaskElement) {
         console.log('Трясем!', flaskElement);
@@ -342,6 +350,7 @@ if (potions.length > 0) {
     }
 
     function updatePotions() {
+      
       
         potions.forEach((potion, index) => {
             const img = potion.querySelector('img');
@@ -364,6 +373,7 @@ if (potions.length > 0) {
     
     itemsOrder = shuffleArray(itemsOrder);
     updatePotions();
+    
     
     let draggedIndex = null;
     let draggedElement = null;
@@ -407,11 +417,17 @@ if (potions.length > 0) {
                 [itemsOrder[targetIndex], itemsOrder[draggedIndex]];
                 updatePotions();
 
+                shakeFlask(this);
+                shakeFlask(potions[draggedIndex]);
+
+
                 const sound = document.getElementById('potion_sound');
                 if (sound) {
                     sound.currentTime = 0;
                     sound.play().catch(e => console.log('ошибка!', e));
                 }
+                
+                check_full_same_color_rows();
 
 
             }
@@ -441,6 +457,83 @@ if (potions.length > 0) {
         draggedElement = null;
     });}
 
+  
+
+  function check_full_same_color_rows() {
+    const all_potions = Array.from(document.querySelectorAll('[data-index]'));
+
+    const potions_with_position = all_potions.map(el => {
+        const rect = el.getBoundingClientRect();
+        const img = el.querySelector('img');
+        let color = null;
+
+        if (img) {
+            if (img.classList.contains('potion_pink'))   color = 'pink';
+            if (img.classList.contains('potion_blue'))   color = 'blue';
+            if (img.classList.contains('potion_purple')) color = 'purple';
+        }
+
+        return {
+            element: el,
+            top: rect.top,
+            left: rect.left,
+            color: color
+        };
+    });
+
+    const row_tolerance = 40;
+    const rows = [];
+    let current_row = [];
+    let previous_top = potions_with_position[0]?.top ?? 0;
+
+    potions_with_position.sort((a, b) => a.top - b.top);
+
+    potions_with_position.forEach(item => {
+        if (Math.abs(item.top - previous_top) > row_tolerance && current_row.length > 0) {
+            rows.push(current_row);
+            current_row = [];
+        }
+        current_row.push(item);
+        previous_top = item.top;
+    });
+
+    if (current_row.length > 0) {
+        rows.push(current_row);
+    }
+
+    let completed_rows = 0;
+
+    rows.forEach((row_items, row_number) => {
+        if (row_items.length < 5) return;
+
+        row_items.sort((a, b) => a.left - b.left);
+
+        const colors = row_items.map(item => item.color);
+        const first_color = colors[0];
+
+        if (!first_color) return;
+
+        const all_same = colors.every(c => c === first_color);
+
+        if (all_same) {
+            console.log(`Ряд ${row_number + 1} — полностью ${first_color} (${colors.length} шт)`);
+            completed_rows++;
+        }
+    });
+
+    if (completed_rows === 3 && rows.length >= 3) {
+          const sound5 = document.getElementById('done');
+          sound5.volume=0.3;
+            if (sound5) {
+                sound5.currentTime = 0;
+                sound5.play().catch(e => console.log('ошибка!', e));
+            }
+    } else if (completed_rows > 0) {
+        console.log(`Пока собрано ${completed_rows} из 3 рядов`);
+    } else {
+        console.log("Полных одноцветных рядов пока нет");
+    }
+}
 
 
 
@@ -548,12 +641,12 @@ if (rezak2 && piece_glasses.length > 0) {
           
           piece_glasses_2[index].style.transition = 'transform 0.5s ease';
           piece_glasses_2[index].style.transform = 'translate(50px, 30px)';
-            const sound3 = document.getElementById('broken_glass');
-        sound3.volume=0.3;
-          if (sound3) {
-              sound3.currentTime = 0;
-              sound3.play().catch(e => console.log('ошибка!', e));
-          }
+          const sound3 = document.getElementById('broken_glass');
+          sound3.volume=0.3;
+            if (sound3) {
+                sound3.currentTime = 0;
+                sound3.play().catch(e => console.log('ошибка!', e));
+            }
           
           const all_cut = Array.from(piece_glasses).every(p => p.classList.contains('cut'));
           if (all_cut) {
