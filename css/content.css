@@ -305,7 +305,7 @@ body {
 
 .textik2 {
     margin-left: 15.4%;
-    margin-top: 38.3%;
+    margin-top: 40.3%;
     width: 36vw;
     height: 4vw;
     position: absolute;
@@ -315,6 +315,22 @@ body {
     line-height: 2.3vw;
     font-size: 1.66vw;
     pointer-events: none;
+
+}
+
+.textik_2 {
+    margin-left: 15.4%;
+    margin-top: 40.7%;
+    width: 36vw;
+    height: 4vw;
+    position: absolute;
+    z-index: 20000;
+    font-family: "kom-post";
+    color: #686868;
+    line-height: 2.3vw;
+    font-size: 1.66vw;
+    pointer-events: none;
+    opacity: 0;
 
 }
 
@@ -355,12 +371,24 @@ body {
 .text2 {
     position: absolute;
     margin-left: 12%;
-    margin-top: 35%;
+    margin-top: 37%;
     width: 43.61vw;
     height: 13.33vw;
     z-index: 10000;
     transition: opacity 0.35s ease;
     pointer-events: none;
+}
+
+.text_small2 {
+    position: absolute;
+    margin-left: 12%;
+    margin-top: 37.4%;
+    width: 41.32vw;
+    height: 8.33vw;
+    z-index: 10000;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+    opacity: 0;
 }
 
 
@@ -398,7 +426,7 @@ body {
     width: 7.57vw;
     height: 7.43vw;
     position: absolute;
-    margin-top: 36%;
+    margin-top: 38%;
     margin-left: 1.8%;
     cursor: pointer;
     z-index: 2800;
@@ -409,7 +437,7 @@ body {
     width: 7.57vw;
     height: 7.43vw;
     position: absolute;
-    margin-top: 36%;
+    margin-top: 38%;
     margin-left: 1.8%;
     display: none;
     cursor: pointer;
@@ -925,7 +953,7 @@ body {
     position: absolute;
     z-index: 1000000000;
     opacity: 0;
-    margin-top: -232.9%;
+    margin-top: -250.9%;
     pointer-events: none;
     transition: opacity 2s ease-in-out;
 }
@@ -1044,6 +1072,17 @@ body {
     cursor: pointer;
 }
 
+.pack2_2{
+    margin-top: 21%;
+    margin-left: 56%;
+    width: 10.07vw;
+    height: 10.76vw;
+    position: absolute;
+    z-index: 100002;
+    pointer-events: none;
+    opacity: 0;
+}
+
 .pack1{
     margin-top: 20%;
     margin-left: 53%;
@@ -1101,7 +1140,7 @@ body {
     height: 15.90vw;
     position: absolute;
     z-index: 1000;  
-    margin-top: 12%;
+    margin-top: 7%;
     margin-left: 80.5%; 
     cursor: pointer;
 }
@@ -1121,7 +1160,7 @@ body {
 
 .game5{
     margin-top: 10%;
-    margin-left: 30%;
+    margin-left: 29%;
     width: 41.03vw;
     height: 49.43vw;
     position: absolute;
@@ -1150,8 +1189,8 @@ body {
 }
 
 .close_button2 {
-    width: 3.75vw;
-    height: 3.75vw;
+    width: 5vw;
+    height: 5vw;
     margin-top: -2%;
     margin-left: 97%;
     position: absolute;
@@ -1213,8 +1252,8 @@ body {
     height: 22.64vw;
     position: absolute;
     z-index: 10000;  
-    margin-top: 79%;
-    margin-left: 50%; 
+    margin-top: 40%;
+    margin-left: 60%; 
     animation: rotation 4s linear infinite;
 }
 
@@ -1223,8 +1262,8 @@ body {
     height: 25.64vw;
     position: absolute;
     z-index: 10000;  
-    margin-top: 80%;
-    margin-left:8%; 
+    margin-top: 61%;
+    margin-left:62%; 
     rotate: 150deg;
     animation: rotation2 3s linear infinite;
 }
@@ -1268,7 +1307,7 @@ body {
 
 .game6{
     margin-top: 10%;
-    margin-left: 30%;
+    margin-left: 29%;
     width: 41.03vw;
     height: 49.43vw;
     position: absolute;

@@ -72,6 +72,8 @@ document.addEventListener("DOMContentLoaded", function(){
   const dialog_opened2 = document.querySelector('.dialog_opened2');
   const text2 = document.querySelector('.text2');
   const textik2 = document.querySelector('.textik2');
+  const textik_2 = document.querySelector('.textik_2');
+  const text_small2 = document.querySelector('.text_small2');
   
   if (dialog_closed2 && dialog_opened2 && text2 && textik2) {
     dialog_closed2.style.display = 'none';
@@ -84,6 +86,8 @@ document.addEventListener("DOMContentLoaded", function(){
       text2.style.display = 'none';
       textik2.style.display = 'none';
       dialog_closed2.style.display = 'block';
+      textik4.style.display = 'none';
+      text_small3.style.display = 'none';
     });
     
     dialog_closed2.addEventListener('click', function() {
@@ -91,6 +95,8 @@ document.addEventListener("DOMContentLoaded", function(){
       dialog_opened2.style.display = 'block';
       text2.style.display = 'block';
       textik2.style.display = 'block';
+      textik4.style.display = 'block';
+      text_small3.style.display = 'block';
     });
   }
 
@@ -291,6 +297,12 @@ document.addEventListener('mousemove', (e) => {
       r1.top < r2.bottom && r1.bottom > r2.top) {
     flowerSmall.style.display = 'none';
     flowerGrow.style.display = 'block';
+    const sound5 = document.getElementById('done');
+    sound5.volume=0.3;
+            if (sound5) {
+                sound5.currentTime = 0;
+                sound5.play().catch(e => console.log('ошибка!', e));
+            }
 
     document.querySelector('.black_square').style.opacity = '0';
   }
@@ -528,6 +540,10 @@ if (potions.length > 0) {
                 sound5.currentTime = 0;
                 sound5.play().catch(e => console.log('ошибка!', e));
             }
+            textik2.style.opacity = '0';
+            text2.style.opacity = '0';
+            textik_2.style.opacity = '1';
+            text_small2.style.opacity = '1';
     } else if (completed_rows > 0) {
         console.log(`Пока собрано ${completed_rows} из 3 рядов`);
     } else {
@@ -769,6 +785,12 @@ pieces.forEach((piece, index) => {
                 textik4.style.opacity ='1';
                 text_small3.style.opacity ='1';
                 document.querySelector('.black1_square').style.opacity = '0';
+                const sound5 = document.getElementById('done');
+                sound5.volume=0.3;
+                  if (sound5) {
+                      sound5.currentTime = 0;
+                      sound5.play().catch(e => console.log('ошибка!', e));
+                  }
             }
             
             piece.style.display = 'none';
@@ -797,6 +819,7 @@ pieces.forEach((piece, index) => {
 
 const pack1 = document.querySelector('.pack1');
 const pack2 = document.querySelector('.pack2');
+const pack2_2 = document.querySelector('.pack2_2');
 const game4 = document.querySelector('.game4');
 const close_button2 = document.querySelector('.close_button2');
 
@@ -805,6 +828,13 @@ if (close_button2 && game4) {
         game4.style.display = 'none';
         const black1Square = document.querySelector('.black2_square');
         if (black1Square) black1Square.style.opacity = '0';
+        const sound5 = document.getElementById('done');
+        sound5.volume=0.3;
+                if (sound5) {
+                    sound5.currentTime = 0;
+                    sound5.play().catch(e => console.log('ошибка!', e));
+                }
+        pack2_2.style.opacity = '1';
     });
 }
 
