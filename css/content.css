@@ -130,10 +130,11 @@ body {
     position: absolute;
     z-index: 10000000;
     opacity: 0;
+    background-color: black;
     pointer-events: none;
     transition: opacity 2s ease-in-out;
     width: 100vw;
-    height: 297.08vw;
+    height: 307.9vw;
 }
 
 .light {
@@ -659,6 +660,69 @@ body {
     pointer-events: none;
     opacity: 0;
 
+}
+
+
+.dialog_closed4 {
+    width: 7.57vw;
+    height: 7.43vw;
+    position: absolute;
+    margin-top: 2%;
+    margin-left: 1.8%;
+    cursor: pointer;
+    z-index: 2800;
+    pointer-events: visible;
+}
+
+.dialog_opened4 {
+    width: 7.57vw;
+    height: 7.43vw;
+    position: absolute;
+    margin-top: 2%;
+    margin-left: 1.8%;
+    display: none;
+    cursor: pointer;
+    z-index: 1300;
+    pointer-events: visible;
+}
+
+.textik5 {
+    margin-left: 15.4%;
+    margin-top: 4%;
+    width: 33vw;
+    height: 4vw;
+    position: absolute;
+    z-index: 20000;
+    font-family: "kom-post";
+    color: #686868;
+    line-height: 2.3vw;
+    font-size: 1.66vw;
+    pointer-events: none;
+
+}
+
+.text4 {
+    position: absolute;
+    margin-left: 12%;
+    margin-top: 1%;
+    width: 43.61vw;
+    height: 13.33vw;
+    z-index: 10000;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+}
+
+.text_small4 {
+    position: absolute;
+    margin-left: 12%;
+    margin-top: 3%;
+    width: 41.32vw;
+    height: 8.33vw;
+    z-index: 10000;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+    opacity: 0;
+    
 }
 
 .table {
@@ -1194,6 +1258,7 @@ body {
     margin-top: -2%;
     margin-left: 97%;
     position: absolute;
+    animation: pulse 2s linear infinite;
 }
 
 .main{

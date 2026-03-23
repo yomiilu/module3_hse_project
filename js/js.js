@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 setTimeout(function() {
-    document.querySelector('.black_square').style.opacity = '1';
+    document.querySelector('.black_square').style.opacity = '0.5';
 }, 3000);
 
 
@@ -560,13 +560,13 @@ if (potions.length > 0) {
     close_button.addEventListener('click', function() {
         game3.style.display = 'none';
 
-        document.querySelector('.black1_square').style.opacity = '0';
+        document.querySelector('.black_square').style.opacity = '0';
 
     });
 
     instruments.addEventListener('click', function() {
         game3.style.display = 'block';
-        document.querySelector('.black1_square').style.opacity = '1';
+        document.querySelector('.black_square').style.opacity = '0.5';
     });
 
 
@@ -784,7 +784,7 @@ pieces.forEach((piece, index) => {
                 text3.style.opacity ='0';
                 textik4.style.opacity ='1';
                 text_small3.style.opacity ='1';
-                document.querySelector('.black1_square').style.opacity = '0';
+                document.querySelector('.black_square').style.opacity = '0';
                 const sound5 = document.getElementById('done');
                 sound5.volume=0.3;
                   if (sound5) {
@@ -817,6 +817,7 @@ pieces.forEach((piece, index) => {
     }, 2000);
   }
 
+  
 const pack1 = document.querySelector('.pack1');
 const pack2 = document.querySelector('.pack2');
 const pack2_2 = document.querySelector('.pack2_2');
@@ -826,8 +827,8 @@ const close_button2 = document.querySelector('.close_button2');
 if (close_button2 && game4) {
     close_button2.addEventListener('click', function() {
         game4.style.display = 'none';
-        const black1Square = document.querySelector('.black2_square');
-        if (black1Square) black1Square.style.opacity = '0';
+        const black_Square = document.querySelector('.black_square');
+        if (black_Square) black_Square.style.opacity = '0';
         const sound5 = document.getElementById('done');
         sound5.volume=0.3;
                 if (sound5) {
@@ -841,14 +842,14 @@ if (close_button2 && game4) {
   if (pack1 && game4) {
       pack1.addEventListener('click', function() {
           game4.style.display = 'block';
-          document.querySelector('.black2_square').style.opacity = '1';
+          document.querySelector('.black_square').style.opacity = '0.5';
       });
   }
 
   if (pack2 && game4) {
       pack2.addEventListener('click', function() {
           game4.style.display = 'block';
-          document.querySelector('.black2_square').style.opacity = '1';
+          document.querySelector('.black_square').style.opacity = '0.5';
       });
   }
 
@@ -861,7 +862,7 @@ if (paper && game5) {
     paper.addEventListener('click', function() {
         game5.style.display = 'block';
         game6.style.display = 'block';
-        document.querySelector('.black2_square').style.opacity = '1';
+        document.querySelector('.black_square').style.opacity = '0.5';
     });
 }
 
