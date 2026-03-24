@@ -326,6 +326,8 @@ document.addEventListener('mousemove', (e) => {
   
   if (!poliv2 || !flowerSmall || !flowerGrow) return;
   if (poliv2.style.opacity !== '1') return;
+
+
   
   let r1 = poliv2.getBoundingClientRect();
   let r2 = flowerSmall.getBoundingClientRect();
@@ -350,6 +352,32 @@ document.addEventListener('mousemove', (e) => {
     document.querySelector('.black_square').style.opacity = '0';
   }
 });
+
+let polivClicked = false;
+
+const flowerSmall = document.querySelector('.flower_small');
+const flowerGrow = document.querySelector('.flower_grow');
+
+console.log('poliv:', poliv);
+console.log('flowerSmall:', flowerSmall);
+console.log('flowerGrow:', flowerGrow);
+
+if (poliv) {
+  poliv.addEventListener('click', () => {
+    polivClicked = true;
+  });
+}
+
+if (flowerSmall && flowerGrow) {
+  flowerSmall.addEventListener('click', () => {
+    if (polivClicked) {
+      flowerSmall.style.display = 'none';
+      flowerGrow.style.display = 'block';
+      document.querySelector('.black_square').style.opacity = '0';
+      polivClicked = false;
+    }
+  });
+}
 
 
 
