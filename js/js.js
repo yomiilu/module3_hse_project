@@ -286,6 +286,10 @@ document.addEventListener('mousemove', (e) => {
   const poliv2 = document.querySelector('.poliv2');
   const flowerSmall = document.querySelector('.flower_small');
   const flowerGrow = document.querySelector('.flower_grow');
+  const textik1_2 = document.querySelector('.textik1_2')
+  const textik1 = document.querySelector('.textik1')
+  const text_small1 = document.querySelector('.text_small1')
+  const text = document.querySelector('.text')
   
   if (!poliv2 || !flowerSmall || !flowerGrow) return;
   if (poliv2.style.opacity !== '1') return;
@@ -303,6 +307,12 @@ document.addEventListener('mousemove', (e) => {
                 sound5.currentTime = 0;
                 sound5.play().catch(e => console.log('ошибка!', e));
             }
+    text.style.opacity = '0';
+    textik1.style.opacity = '0';
+    textik1_2.style.opacity = '1';
+    text_small1.style.opacity = '1';
+
+    
 
     document.querySelector('.black_square').style.opacity = '0';
   }
@@ -823,6 +833,10 @@ const pack2 = document.querySelector('.pack2');
 const pack2_2 = document.querySelector('.pack2_2');
 const game4 = document.querySelector('.game4');
 const close_button2 = document.querySelector('.close_button2');
+const text_small4= document.querySelector('.text_small4')
+const text4 = document.querySelector('.text4')
+const textik5 = document.querySelector('.textik5')
+const textik6 = document.querySelector('.textik6')
 
 if (close_button2 && game4) {
     close_button2.addEventListener('click', function() {
@@ -836,6 +850,10 @@ if (close_button2 && game4) {
                     sound5.play().catch(e => console.log('ошибка!', e));
                 }
         pack2_2.style.opacity = '1';
+        text4.style.display = 'none';
+        textik5.style.display = 'none';
+        text_small4.style.opacity = '1';
+        textik6.style.opacity = '1';
     });
 }
 
@@ -966,5 +984,12 @@ let counter = 0;
             }
         });
     });
+
+  const button = document.querySelector('.button');
+  if (button) {
+    button.addEventListener('click', () => {
+        window.location.href = 'https://deziiign.com/designer/evgeniya-chernyshenko-caecc657a5fa47999073f9ddd446fbe3';
+    });
+}
 
 });

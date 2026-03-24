@@ -304,6 +304,22 @@ body {
 
 }
 
+.textik1_2 {
+    margin-left: 15.4%;
+    margin-top: -60.8%;
+    width: 36vw;
+    height: 4vw;
+    position: absolute;
+    z-index: 20000;
+    font-family: "kom-post";
+    color: #686868;
+    line-height: 2.3vw;
+    font-size: 1.66vw;
+    pointer-events: none;
+    opacity: 0;
+
+}
+
 .textik2 {
     margin-left: 15.4%;
     margin-top: 40.3%;
@@ -367,6 +383,18 @@ body {
     z-index: 1200;
     transition: opacity 0.35s ease;
     pointer-events: none;
+}
+
+.text_small1 {
+    position: absolute;
+    margin-left: 12%;
+    margin-top: -64%;
+    width: 41.32vw;
+    height: 8.33vw;
+    z-index: 10000;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+    opacity: 0;
 }
 
 .text2 {
@@ -701,6 +729,24 @@ body {
 
 }
 
+
+.textik6 {
+    margin-left: 15.4%;
+    margin-top: 4%;
+    width: 33vw;
+    height: 4vw;
+    position: absolute;
+    z-index: 20000;
+    font-family: "kom-post";
+    color: #686868;
+    line-height: 2.3vw;
+    font-size: 1.66vw;
+    pointer-events: none;
+    opacity: 0;
+
+}
+
+
 .text4 {
     position: absolute;
     margin-left: 12%;
@@ -715,7 +761,7 @@ body {
 .text_small4 {
     position: absolute;
     margin-left: 12%;
-    margin-top: 3%;
+    margin-top: 2%;
     width: 41.32vw;
     height: 8.33vw;
     z-index: 10000;
@@ -1112,7 +1158,7 @@ body {
     width: 20.49vw;
     height: 47.36vw;
     margin-left: 30.72%;
-    margin-top: 14%;
+    margin-top: 15%;
     position: absolute;
     z-index: 100000;
 }
@@ -1121,7 +1167,7 @@ body {
     width: 19.93vw;
     height: 46.81vw;
     margin-left: 31%;
-    margin-top: 14%;
+    margin-top: 15%;
     position: absolute;
     z-index: 1000000;
 }
@@ -1204,8 +1250,8 @@ body {
     height: 15.90vw;
     position: absolute;
     z-index: 1000;  
-    margin-top: 7%;
-    margin-left: 80.5%; 
+    margin-top: 14%;
+    margin-left: 82.5%; 
     cursor: pointer;
 }
 
@@ -1380,4 +1426,44 @@ body {
     display: none;
     background-image: url('../img/podval.svg');
     background-size: cover; 
+}
+
+.button{
+    width: 32.01vw;
+    height: 4.93vw;
+    margin-top: 45%;
+    margin-left: 13%;
+    opacity: 1;
+    position: absolute;
+    animation: pulse2 2s linear infinite;
+    cursor: pointer;
+}
+
+
+.clock{
+    width: 11.18vw;
+    height: 10.69vw;
+    margin-top: 0.6%;
+    margin-left: 84%;
+    position: absolute;
+    z-index: 1000;
+}
+
+.clock_2{
+    width: 2.43vw;
+    height: 2.92vw;
+    margin-top: 4%;
+    margin-left: 89.2%;
+    position: absolute;
+    z-index: 1000;
+}
+
+.typewriter::after {
+  content: "|";
+  margin-left: 3px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
 }
