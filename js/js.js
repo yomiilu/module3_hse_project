@@ -37,6 +37,8 @@ document.addEventListener("DOMContentLoaded", function(){
     });
   });
 
+  
+
 
 
 
@@ -454,6 +456,52 @@ if (potions.length > 0) {
             }
         });
     }
+
+    let selected_first_index = null;
+let moved = false;
+
+document.addEventListener('mousemove', function() {
+    if (clone) moved = true;
+});
+
+potions.forEach(function(potion) {
+    potion.addEventListener('click', function() {
+
+        if (moved) {
+            moved = false;
+            return;
+        }
+
+        const clicked_index = parseInt(this.getAttribute('data-index'));
+
+        if (selected_first_index === null) {
+            selected_first_index = clicked_index;
+        } 
+        else if (selected_first_index !== clicked_index) {
+
+            [itemsOrder[selected_first_index], itemsOrder[clicked_index]] =
+            [itemsOrder[clicked_index], itemsOrder[selected_first_index]];
+
+            updatePotions();
+
+            shakeFlask(potions[selected_first_index]);
+            shakeFlask(potions[clicked_index]);
+
+            const sound = document.getElementById('potion_sound');
+            if (sound) {
+                sound.currentTime = 0;
+                sound.play().catch(() => {});
+            }
+
+            check_full_same_color_rows();
+
+            selected_first_index = null;
+        } 
+        else {
+            selected_first_index = null;
+        }
+    });
+});
     
     itemsOrder = shuffleArray(itemsOrder);
     updatePotions();
@@ -539,7 +587,9 @@ if (potions.length > 0) {
         }
         draggedIndex = null;
         draggedElement = null;
+        
     });}
+
 
   
 
@@ -623,6 +673,39 @@ if (potions.length > 0) {
     }
 }
 
+// === Самый простой обмен колбочками по клику ===
+
+let selected = null;
+
+potions.forEach(function(potion) {
+    potion.addEventListener('click', function() {
+        const idx = parseInt(this.getAttribute('data-index'));
+
+        if (selected === null) {
+            selected = idx;
+        } else if (selected !== idx) {
+            // Меняем местами
+            [itemsOrder[selected], itemsOrder[idx]] = [itemsOrder[idx], itemsOrder[selected]];
+
+            updatePotions();
+
+            shakeFlask(potions[selected]);
+            shakeFlask(potions[idx]);
+
+            const sound = document.getElementById('potion_sound');
+            if (sound) {
+                sound.currentTime = 0;
+                sound.play().catch(function(){});
+            }
+
+            check_full_same_color_rows();
+
+            selected = null;
+        } else {
+            selected = null;
+        }
+    });
+});
 
 
 
@@ -1052,80 +1135,8 @@ let counter = 0;
 }
 
 
-// === Финальная touch-версия для колбочек (добавь в самый конец js.js) ===
 
-    potions.forEach((potion) => {
-        potion.addEventListener('touchstart', function(e) {
-            e.preventDefault();
-            draggedIndex = parseInt(this.getAttribute('data-index'));
-            draggedElement = this;
-            
-            clone = this.cloneNode(true);
-            clone.style.position = 'fixed';
-            clone.style.zIndex = '100000000000';
-            clone.style.width = this.offsetWidth + 'px';
-            clone.style.height = this.offsetHeight + 'px';
-            clone.style.margin = '0';
-            clone.style.left = e.touches[0].clientX - this.offsetWidth/2 + 'px';
-            clone.style.top = e.touches[0].clientY - this.offsetHeight/2 + 'px';
-            clone.style.pointerEvents = 'none';
-            clone.style.opacity = '0.8';
-            document.body.appendChild(clone);
-            
-            this.style.opacity = '0.5';
-        }, { passive: false });
-    });
-
-    document.addEventListener('touchmove', function(e) {
-        if (!clone) return;
-        e.preventDefault();
-        clone.style.left = e.touches[0].clientX - clone.offsetWidth/2 + 'px';
-        clone.style.top = e.touches[0].clientY - clone.offsetHeight/2 + 'px';
-    }, { passive: false });
-
-    document.addEventListener('touchend', function(e) {
-        if (draggedIndex === null || !clone) return;
-
-        const touch = e.changedTouches[0];
-        
-        // Важно: даём браузеру немного времени, чтобы DOM обновился
-        setTimeout(() => {
-            const targetElement = document.elementFromPoint(touch.clientX, touch.clientY);
-            const targetPotion = targetElement ? targetElement.closest('[data-index]') : null;
-
-            if (targetPotion) {
-                const targetIndex = parseInt(targetPotion.getAttribute('data-index'));
-
-                if (draggedIndex !== targetIndex) {
-                    [itemsOrder[draggedIndex], itemsOrder[targetIndex]] = 
-                    [itemsOrder[targetIndex], itemsOrder[draggedIndex]];
-
-                    updatePotions();
-
-                    shakeFlask(targetPotion);
-                    shakeFlask(potions[draggedIndex]);
-
-                    const sound = document.getElementById('potion_sound');
-                    if (sound) {
-                        sound.currentTime = 0;
-                        sound.play().catch(e => console.log('ошибка!', e));
-                    }
-                    
-                    check_full_same_color_rows();
-                }
-            }
-
-            // очистка
-            if (clone) {
-                clone.remove();
-                clone = null;
-            }
-            if (draggedElement) {
-                draggedElement.style.opacity = '1';
-            }
-            draggedIndex = null;
-            draggedElement = null;
-        }, 10);
-    });
 
 });
+
+
