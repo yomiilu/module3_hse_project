@@ -810,7 +810,47 @@ body {
     pointer-events: visible;
     z-index: 10000;
     animation: banka1 2s linear ease-in-out;
+    transition: 0.3s ease-in-out;
 }
+
+.banka1:hover{
+    opacity: 0;
+}
+
+.banka6 {
+    width: 7.71vw;
+    height: 11.04vw;
+    margin-top: 1%;
+    margin-left: 55%;
+    position: absolute;
+    cursor: pointer;
+    pointer-events: visible;
+    z-index: 10000;
+    animation: banka1 2s linear ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+.banka6:hover{
+    opacity: 0;
+}
+
+.banka7 {
+    width: 7.71vw;
+    height: 11.04vw;
+    margin-top: 1%;
+    margin-left: 68%;
+    position: absolute;
+    cursor: pointer;
+    pointer-events: visible;
+    z-index: 10000;
+    animation: banka1 2s linear ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+.banka7:hover{
+    opacity: 0;
+}
+
 
 .banka_blue {
     width: 6.71vw;
@@ -819,6 +859,58 @@ body {
     margin-left: 14%;
     position: absolute;
     cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.banka_blue:hover{
+    opacity: 0;
+}
+
+
+.banka_blue2 {
+    width: 6.71vw;
+    height: 10.04vw;
+    margin-top: 18.8%;
+    margin-left: 25%;
+    position: absolute;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+
+
+.banka_blue2:hover{
+    opacity: 0;
+}
+
+.banka_blue3 {
+    width: 5.71vw;
+    height: 8.04vw;
+    margin-top: 20.8%;
+    margin-left: 17%;
+    position: absolute;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+
+.banka_blue3:hover{
+    opacity: 0;
+}
+
+.banka_blue4 {
+    width: 8.71vw;
+    height: 10.04vw;
+    margin-top: 19%;
+    margin-left: 52%;
+    position: absolute;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+
+.banka_blue4:hover{
+    opacity: 0;
 }
 
 .banka2 {
@@ -828,6 +920,67 @@ body {
     margin-left: 20%;
     position: absolute;
     cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.banka2:hover{
+    opacity: 0;
+}
+
+.banka3 {
+    width: 7.85vw;
+    height: 11.25vw;
+    margin-top: 1%;
+    margin-left: 32%;
+    position: absolute;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.banka3:hover{
+    opacity: 0;
+}
+
+.banka4 {
+    width: 6.85vw;
+    height: 10.25vw;
+    margin-top: 19%;
+    margin-left: 34%;
+    position: absolute;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.banka4:hover{
+    opacity: 0;
+}
+
+.banka5 {
+    width: 8.85vw;
+    height: 10.25vw;
+    margin-top: 19%;
+    margin-left: 8%;
+    position: absolute;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.banka5:hover{
+    opacity: 0;
+}
+
+.banka8 {
+    width: 7.85vw;
+    height: 9.25vw;
+    margin-top: 20%;
+    margin-left: 61%;
+    position: absolute;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.banka8:hover{
+    opacity: 0;
 }
 
 [data-index] {
@@ -1466,4 +1619,60 @@ body {
 
 @keyframes blink {
   50% { opacity: 0; }
+}
+
+.piece1{
+    width: 5.56vw;
+    height: 5.90vw;
+    position: absolute;
+    margin-top: 70%;
+    margin-left: 20%;
+    animation: piece1 3s linear infinite;
+    animation-delay: 1s;
+}
+
+.piece2{
+    width: 5.56vw;
+    height: 5.90vw;
+    position: absolute;
+    margin-top: 70%;
+    margin-left: 35%;
+    animation: piece1 5s linear infinite;
+    animation-delay: 2s;
+}
+
+.piece3{
+    width: 5.56vw;
+    height: 5.90vw;
+    position: absolute;
+    margin-top: 70%;
+    margin-left: 40%;
+    animation: piece1 7s linear infinite;
+}
+
+.piece4{
+    width: 5.56vw;
+    height: 5.90vw;
+    position: absolute;
+    margin-top: 70%;
+    margin-left: 50%;
+    animation: piece1 10s linear infinite;
+}
+
+.piece5{
+    width: 5.56vw;
+    height: 5.90vw;
+    position: absolute;
+    margin-top: 70%;
+    margin-left: 70%;
+    animation: piece1 6s linear infinite;
+}
+
+
+
+@keyframes piece1{
+0%{transform:translate(0,-6vw) rotate(0deg);opacity:0.4;}
+50%{transform:translate(0,4vw) rotate(180deg);opacity:1;}
+80%{transform:translate(0,8vw) rotate(180deg);opacity:1;}
+100%{transform:translate(0,12vw) rotate(180deg);opacity:0;}
 }

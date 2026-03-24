@@ -135,6 +135,39 @@ document.addEventListener("DOMContentLoaded", function(){
     });
   }
 
+  const dialog_closed4 = document.querySelector('.dialog_closed4');
+  const dialog_opened4 = document.querySelector('.dialog_opened4');
+  const text_small4= document.querySelector('.text_small4')
+  const text4 = document.querySelector('.text4')
+  const textik5 = document.querySelector('.textik5')
+  const textik6 = document.querySelector('.textik6')
+
+  
+  if (dialog_closed4 && dialog_opened4 && text4 && textik5 && textik6 && text_small4) {
+    dialog_closed4.style.display = 'none';
+    dialog_opened4.style.display = 'block';
+    text4.style.display = 'block';
+    textik4.style.display = 'block';
+    
+    dialog_opened4.addEventListener('click', function() {
+      dialog_opened4.style.display = 'none';
+      text4.style.display = 'none';
+      textik5.style.display = 'none';
+      dialog_closed4.style.display = 'block';
+      textik6.style.display = 'none';
+      text_small4.style.display = 'none';
+    });
+    
+    dialog_closed4.addEventListener('click', function() {
+      dialog_closed4.style.display = 'none';
+      dialog_opened4.style.display = 'block';
+      text4.style.display = 'block';
+      textik5.style.display = 'block';
+      textik6.style.display = 'block';
+      text_small4.style.display = 'block';
+    });
+  }
+
 
 
 setTimeout(function() {
@@ -833,10 +866,6 @@ const pack2 = document.querySelector('.pack2');
 const pack2_2 = document.querySelector('.pack2_2');
 const game4 = document.querySelector('.game4');
 const close_button2 = document.querySelector('.close_button2');
-const text_small4= document.querySelector('.text_small4')
-const text4 = document.querySelector('.text4')
-const textik5 = document.querySelector('.textik5')
-const textik6 = document.querySelector('.textik6')
 
 if (close_button2 && game4) {
     close_button2.addEventListener('click', function() {
@@ -850,8 +879,8 @@ if (close_button2 && game4) {
                     sound5.play().catch(e => console.log('ошибка!', e));
                 }
         pack2_2.style.opacity = '1';
-        text4.style.display = 'none';
-        textik5.style.display = 'none';
+        text4.style.opacity = '0';
+        textik5.style.opacity = '0';
         text_small4.style.opacity = '1';
         textik6.style.opacity = '1';
     });
