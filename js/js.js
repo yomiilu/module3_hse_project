@@ -534,7 +534,6 @@ potions.forEach(function(potion) {
         
         document.addEventListener('mousemove', function(e) {
             if (!clone) return;
-            e.preventDefault();
             clone.style.left = e.clientX - clone.offsetWidth/2 + 'px';
             clone.style.top = e.clientY - clone.offsetHeight/2 + 'px';
         });
