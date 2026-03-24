@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline: 1px solid red !important;
 }
 
 
@@ -159,7 +160,7 @@ body {
     pointer-events: none;
     transition: opacity 2s ease-in-out;
     width: 100vw;
-    height: 718.8vw;
+    height: 728.8vw;
 }
 
 .light {
@@ -184,22 +185,23 @@ body {
     width: 120vw;
     height: 173.24vw;
     object-fit: cover;
-    margin-top: -27%;
+    margin-top: -30%;
     display: block;
 }
 
 .section4 {
-    margin-top: -54.5%;
+    margin-top: -60.5%;
     width: 100%;
-    height: 146vw;
+    height: 142vw;
     position: absolute;
+    overflow-x: hidden;
 
 }
 
 .section3 {
     margin-top: -113%;
     width: 100%;
-    height: 440vw;
+    height: 460vw;
     position: relative;
     background-color: #C4CDFA;
 }
@@ -844,7 +846,7 @@ body {
 }
 
 .table {
-    margin-top: 270.3%;
+    margin-top: 280.3%;
     position: absolute;
     width: 155.99vw;
     height: 105.36vw;
@@ -852,7 +854,7 @@ body {
 }
 
 .bochka {
-    margin-top: 320.3%;
+    margin-top: 325.3%;
     position: absolute;
     width: 52.81vw;
     height: 50.72vw;
@@ -865,7 +867,7 @@ body {
     width: 82vw;
     height: 50vw;
     position: absolute;
-    margin-top: 327%;
+    margin-top: 337%;
     margin-left: 16%;
     z-index: 10000;
     scale: 1.65;
@@ -1098,7 +1100,7 @@ body {
     height: 35.33vw;
     position: absolute;
     z-index: 20060;
-    margin-top: 281.5%;
+    margin-top: 291.5%;
     margin-left: 13%;
     pointer-events: visible;
     cursor: pointer;
