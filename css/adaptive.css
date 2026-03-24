@@ -1474,6 +1474,11 @@ body {
     scale: 1.4;
 }
 
+.section3,
+[data-index] {
+    touch-action: none;
+}
+
 .inst3{
     width: 4.86vw;
     height: 8.13vw;

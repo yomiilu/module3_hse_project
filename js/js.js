@@ -625,6 +625,7 @@ if (potions.length > 0) {
 
 
 
+
     const close_button = document.querySelector('.close_button');
     const game3 = document.querySelector('.game3');
     const instruments = document.querySelector('.instruments');
@@ -1049,5 +1050,82 @@ let counter = 0;
         window.location.href = 'https://deziiign.com/designer/evgeniya-chernyshenko-caecc657a5fa47999073f9ddd446fbe3';
     });
 }
+
+
+// === Финальная touch-версия для колбочек (добавь в самый конец js.js) ===
+
+    potions.forEach((potion) => {
+        potion.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            draggedIndex = parseInt(this.getAttribute('data-index'));
+            draggedElement = this;
+            
+            clone = this.cloneNode(true);
+            clone.style.position = 'fixed';
+            clone.style.zIndex = '100000000000';
+            clone.style.width = this.offsetWidth + 'px';
+            clone.style.height = this.offsetHeight + 'px';
+            clone.style.margin = '0';
+            clone.style.left = e.touches[0].clientX - this.offsetWidth/2 + 'px';
+            clone.style.top = e.touches[0].clientY - this.offsetHeight/2 + 'px';
+            clone.style.pointerEvents = 'none';
+            clone.style.opacity = '0.8';
+            document.body.appendChild(clone);
+            
+            this.style.opacity = '0.5';
+        }, { passive: false });
+    });
+
+    document.addEventListener('touchmove', function(e) {
+        if (!clone) return;
+        e.preventDefault();
+        clone.style.left = e.touches[0].clientX - clone.offsetWidth/2 + 'px';
+        clone.style.top = e.touches[0].clientY - clone.offsetHeight/2 + 'px';
+    }, { passive: false });
+
+    document.addEventListener('touchend', function(e) {
+        if (draggedIndex === null || !clone) return;
+
+        const touch = e.changedTouches[0];
+        
+        // Важно: даём браузеру немного времени, чтобы DOM обновился
+        setTimeout(() => {
+            const targetElement = document.elementFromPoint(touch.clientX, touch.clientY);
+            const targetPotion = targetElement ? targetElement.closest('[data-index]') : null;
+
+            if (targetPotion) {
+                const targetIndex = parseInt(targetPotion.getAttribute('data-index'));
+
+                if (draggedIndex !== targetIndex) {
+                    [itemsOrder[draggedIndex], itemsOrder[targetIndex]] = 
+                    [itemsOrder[targetIndex], itemsOrder[draggedIndex]];
+
+                    updatePotions();
+
+                    shakeFlask(targetPotion);
+                    shakeFlask(potions[draggedIndex]);
+
+                    const sound = document.getElementById('potion_sound');
+                    if (sound) {
+                        sound.currentTime = 0;
+                        sound.play().catch(e => console.log('ошибка!', e));
+                    }
+                    
+                    check_full_same_color_rows();
+                }
+            }
+
+            // очистка
+            if (clone) {
+                clone.remove();
+                clone = null;
+            }
+            if (draggedElement) {
+                draggedElement.style.opacity = '1';
+            }
+            draggedIndex = null;
+            draggedElement = null;
+        }, 10);
+    });
 
 });
