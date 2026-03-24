@@ -138,6 +138,7 @@ body {
     z-index: 21;
     margin-top: -65%;
     margin-left: 2.5%;
+    display: block;
 }
 
 .okay{
@@ -157,7 +158,7 @@ body {
     pointer-events: none;
     transition: opacity 2s ease-in-out;
     width: 100vw;
-    height: 307.9vw;
+    height: 718.8vw;
 }
 
 .light {
@@ -179,17 +180,17 @@ body {
 
 .background4 {
     position: absolute;
-    width: 100vw;
-    height: 79.24vw;
+    width: 120vw;
+    height: 173.24vw;
     object-fit: cover;
-    margin-top: -15%;
+    margin-top: -27%;
     display: block;
 }
 
 .section4 {
     margin-top: -54.5%;
     width: 100%;
-    height: 63vw;
+    height: 146vw;
     position: absolute;
 
 }
@@ -838,6 +839,7 @@ body {
     z-index: 21;
     margin-top: 135%;
     margin-left: 2.5%;
+    display: block;
 }
 
 .table {
@@ -1383,19 +1385,21 @@ body {
 .girl_close {
     width: 20.49vw;
     height: 47.36vw;
-    margin-left: 30.72%;
-    margin-top: 15%;
+    margin-left: 20%;
+    margin-top: 70%;
     position: absolute;
     z-index: 100000;
+    scale: 2
 }
 
 .girl_open {
     width: 19.93vw;
     height: 46.81vw;
-    margin-left: 31%;
-    margin-top: 15%;
+    margin-left: 20%;
+    margin-top: 70%;
     position: absolute;
     z-index: 1000000;
+    scale: 2
 }
 
 .pack2{
@@ -1406,6 +1410,8 @@ body {
     position: absolute;
     z-index: 100001;
     cursor: pointer;
+    scale:2;
+    display:none
 }
 
 .pack2_2{
@@ -1417,6 +1423,7 @@ body {
     z-index: 100002;
     pointer-events: none;
     opacity: 0;
+    display:none
 }
 
 .pack1{
@@ -1427,6 +1434,7 @@ body {
     position: absolute;
     z-index: 10000;
     cursor: pointer;
+    display:none
 }
 
 .palka{
@@ -1476,9 +1484,10 @@ body {
     height: 15.90vw;
     position: absolute;
     z-index: 1000;  
-    margin-top: 14%;
-    margin-left: 82.5%; 
+    margin-top: 37%;
+    margin-left: 75.5%; 
     cursor: pointer;
+    scale: 2;
 }
 
 .game4{
@@ -1492,10 +1501,11 @@ body {
     display: none;
     background-image: url('../img/main.svg');
     background-size: cover; 
+    display: none;
 }
 
-.game5{
-    margin-top: 10%;
+.game5_2{
+    margin-top: 40%;
     margin-left: 29%;
     width: 41.03vw;
     height: 49.43vw;
@@ -1504,6 +1514,7 @@ body {
     display: none;
     background-image: url('../img/paper_big.svg');
     background-size: cover; 
+    scale: 2.3;
 }
 
 .pack3{
@@ -1541,7 +1552,7 @@ body {
 
 }
 
-.for_tick1{
+.for_tick{
     width: 2.99vw;
     height: 2.78vw;
     position: absolute;
@@ -1589,9 +1600,10 @@ body {
     height: 22.64vw;
     position: absolute;
     z-index: 10000;  
-    margin-top: 40%;
-    margin-left: 60%; 
+    margin-top: 72%;
+    margin-left: 23%; 
     animation: rotation 4s linear infinite;
+    scale: 1.2
 }
 
 .rotate_fl2{
@@ -1599,10 +1611,11 @@ body {
     height: 25.64vw;
     position: absolute;
     z-index: 10000;  
-    margin-top: 61%;
-    margin-left:62%; 
+    margin-top: 60%;
+    margin-left: 55%; 
     rotate: 150deg;
     animation: rotation2 3s linear infinite;
+    scale: 1.1;
 }
 
 .tick1{
@@ -1673,6 +1686,7 @@ body {
     margin-left: 84%;
     position: absolute;
     z-index: 1000;
+    display: none;
 }
 
 .clock_2{
@@ -1682,6 +1696,7 @@ body {
     margin-left: 89.2%;
     position: absolute;
     z-index: 1000;
+    display: none;
 }
 
 .typewriter::after {

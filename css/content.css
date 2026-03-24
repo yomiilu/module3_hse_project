@@ -1667,4 +1667,24 @@ body {
     margin-left: 70%;
     animation: piece1 6s linear infinite;
 }
+.message_phone{
+    width: 95.43vw;
+    height: 195.25vw; 
+    position: absolute; 
+    z-index: 21;
+    margin-top: 135%;
+    margin-left: 2.5%;
+    display: none;
+}
 
+
+
+.message_phone2{
+    width: 95.43vw;
+    height: 195.25vw; 
+    position: absolute; 
+    z-index: 21;
+    margin-top: 135%;
+    margin-left: 2.5%;
+    display: none;
+}

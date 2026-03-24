@@ -365,6 +365,7 @@ console.log('flowerGrow:', flowerGrow);
 if (poliv) {
   poliv.addEventListener('click', () => {
     polivClicked = true;
+
   });
 }
 
