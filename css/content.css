@@ -335,9 +335,14 @@ body {
 
 }
 
+
+.okay2{
+    display: none;
+}
+
 .textik_2 {
     margin-left: 15.4%;
-    margin-top: 40.7%;
+    margin-top: 39.2%;
     width: 36vw;
     height: 4vw;
     position: absolute;
@@ -448,7 +453,7 @@ body {
     width: 100vw;
     height: 163.75vw;
     position: absolute;
-    margin-top: 14%;
+    margin-top: 15%;
 }
 
 .dialog_closed2 {
@@ -1657,6 +1662,22 @@ body {
     margin-top: 70%;
     margin-left: 50%;
     animation: piece1 10s linear infinite;
+}
+
+.textik_phone1{
+    margin-left: 15.4%;
+    margin-top: -61.9%;
+    width: 36vw;
+    height: 4vw;
+    position: absolute;
+    z-index: 20000;
+    font-family: "kom-post";
+    color: #686868;
+    line-height: 2.3vw;
+    font-size: 1.66vw;
+    pointer-events: none;
+    position: absolute;
+    opacity: 0;
 }
 
 .section3,

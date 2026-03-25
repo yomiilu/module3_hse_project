@@ -427,13 +427,6 @@ if (potions.length > 0) {
         }, 300);
     }
     
-        function shakeFlask(flaskElement) {
-        console.log('Трясем!', flaskElement);
-        flaskElement.classList.add('shaking');
-        setTimeout(() => {
-            flaskElement.classList.remove('shaking');
-        }, 300);
-    }
 
     function updatePotions() {
       
@@ -534,6 +527,7 @@ potions.forEach(function(potion) {
         
         document.addEventListener('mousemove', function(e) {
             if (!clone) return;
+            e.preventDefault();
             clone.style.left = e.clientX - clone.offsetWidth/2 + 'px';
             clone.style.top = e.clientY - clone.offsetHeight/2 + 'px';
         });
@@ -672,7 +666,6 @@ potions.forEach(function(potion) {
     }
 }
 
-// === Самый простой обмен колбочками по клику ===
 
 let selected = null;
 
@@ -683,7 +676,6 @@ potions.forEach(function(potion) {
         if (selected === null) {
             selected = idx;
         } else if (selected !== idx) {
-            // Меняем местами
             [itemsOrder[selected], itemsOrder[idx]] = [itemsOrder[idx], itemsOrder[selected]];
 
             updatePotions();
@@ -799,7 +791,7 @@ if (rezak2 && piece_glasses.length > 0) {
       );
       
       if (on_border) {
-        piece.style.opacity = '0.7';
+        piece.style.opacity = '0.9';
         piece_glasses_2[index].style.transition = 'opacity 0.5s ease';
         piece_glasses_2[index].style.opacity = '1';
         
@@ -1133,9 +1125,23 @@ let counter = 0;
     });
 }
 
+const okay = document.querySelector('.okay');
+const textik_phone1= document.querySelector('.textik_phone1');
+const message_phone = document.querySelector('.message_phone');
+okay.addEventListener('click', function() {
+    
+    textik_phone1.style.opacity = '0';
+    message_phone.style.opacity = '0';
+    okay.style.opacity = '0';
+    
+});
 
-
-
+const okay2 = document.querySelector('.okay2');
+okay2.addEventListener('click', function() {
+    
+    game3.style.opacity = '0';
+    document.querySelector('.black_square').style.opacity = '0';
 });
 
 
+});
