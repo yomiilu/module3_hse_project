@@ -816,6 +816,7 @@ body {
     z-index: 10000;
     animation: banka1 2s linear ease-in-out;
     transition: 0.3s ease-in-out;
+    opacity: 1;
 }
 
 .banka1:hover{
@@ -833,6 +834,7 @@ body {
     z-index: 10000;
     animation: banka1 2s linear ease-in-out;
     transition: 0.3s ease-in-out;
+    opacity: 1;
 }
 
 .banka6:hover{
@@ -850,6 +852,7 @@ body {
     z-index: 10000;
     animation: banka1 2s linear ease-in-out;
     transition: 0.3s ease-in-out;
+    opacity: 1;
 }
 
 .banka7:hover{
@@ -865,6 +868,7 @@ body {
     position: absolute;
     cursor: pointer;
     transition: 0.3s ease-in-out;
+    opacity: 1;
 }
 
 .banka_blue:hover{
@@ -880,6 +884,7 @@ body {
     position: absolute;
     cursor: pointer;
     transition: 0.3s ease-in-out;
+    opacity: 1;
 }
 
 
@@ -896,6 +901,7 @@ body {
     position: absolute;
     cursor: pointer;
     transition: 0.3s ease-in-out;
+    opacity: 1;
 }
 
 
@@ -911,6 +917,7 @@ body {
     position: absolute;
     cursor: pointer;
     transition: 0.3s ease-in-out;
+    opacity: 1;
 }
 
 
@@ -926,6 +933,7 @@ body {
     position: absolute;
     cursor: pointer;
     transition: 0.3s ease-in-out;
+    opacity: 1;
 }
 
 .banka2:hover{
@@ -940,6 +948,7 @@ body {
     position: absolute;
     cursor: pointer;
     transition: 0.3s ease-in-out;
+    opacity: 1;
 }
 
 .banka3:hover{

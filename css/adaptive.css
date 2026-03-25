@@ -1,4 +1,4 @@
-@media screen and (min-width: 360px) and (max-width: 413px)  {
+@media screen and (min-width: 360px) and (max-width: 440px)  {
 
     * {
     margin: 0;
@@ -102,8 +102,8 @@ body {
 }
 
 .girl2 {
-    width: 80.86vw;
-    height: 101.22vw;
+    width: 80vw;
+    height: 101vw;
     margin-left: -10%;
     margin-top: 65%;
     position: absolute;
@@ -111,8 +111,8 @@ body {
 }
 
 .girl1 {
-    width: 80.86vw;
-    height: 101.22vw;
+    width: 80vw;
+    height: 101vw;
     margin-left: -10%;
     margin-top: 65%;
     position: absolute;
@@ -120,8 +120,8 @@ body {
 }
 
 .girly {
-    width: 82.56vw;
-    height: 104.83vw;
+    width: 82vw;
+    height: 104vw;
     margin-left: -11%;
     margin-top: 63.5%;
     position: absolute;
@@ -133,8 +133,8 @@ body {
 }
 
 .message_phone{
-    width: 95.43vw;
-    height: 195.25vw; 
+    width: 95vw;
+    height: 195vw; 
     position: absolute; 
     z-index: 21;
     margin-top: -65%;
@@ -222,8 +222,8 @@ body {
 }
 
 .flower1 {
-    width: 80.83vw;
-    height: 80.56vw;
+    width: 80vw;
+    height: 80vw;
     margin-top: -25%;
     margin-left: -25%;
     position: absolute;
@@ -236,8 +236,8 @@ body {
 }
 
 .flower1_1 {
-    width: 80.83vw;
-    height: 80.56vw;
+    width: 80vw;
+    height: 80vw;
     margin-top: -25%;
     margin-left: -25%;
     position: absolute;
@@ -249,8 +249,8 @@ body {
 }
 
 .flower2 {
-    width: 70.17vw;
-    height: 70.89vw;
+    width: 70vw;
+    height: 70vw;
     margin-top: -25%;
     margin-left: 30%;
     position: absolute;
@@ -260,8 +260,8 @@ body {
 }
 
 .flower2_1 {
-    width: 70.17vw;
-    height: 70.89vw;
+    width: 70vw;
+    height: 70vw;
     margin-top: -25%;
     margin-left: 30%;
     position: absolute;
@@ -271,8 +271,8 @@ body {
 }
 
 .flower3 {
-    width: 80.63vw;
-    height: 80.97vw;
+    width: 80vw;
+    height: 80vw;
     margin-top: -20%;
     rotate: 40deg;
     margin-left: 65%;
@@ -283,8 +283,8 @@ body {
 }
 
 .flower3_1 {
-    width: 80.63vw;
-    height: 80.97vw;
+    width: 80vw;
+    height: 80vw;
     margin-top: -20%;
     margin-left: 65%;
     position: absolute;
@@ -294,8 +294,8 @@ body {
 }
 
 .flower4 {
-    width: 29.17vw;
-    height: 28.89vw;
+    width: 29vw;
+    height: 28vw;
     margin-top: 3%;
     margin-left: 56%;
     position: absolute;
@@ -306,8 +306,8 @@ body {
 }
 
 .flower4_1 {
-    width: 40.17vw;
-    height: 40.89vw;
+    width: 40vw;
+    height: 40vw;
     margin-top: 0%;
     rotate: 40deg;
     margin-left: 53%;
@@ -319,7 +319,7 @@ body {
 }
 
 .flower5 {
-    width: 37.01vw;
+    width: 37vw;
     height: 35.56vw;
     margin-top: -4%;
     margin-left: 80%;
@@ -879,8 +879,8 @@ body {
 }
 
 .message_phone2{
-    width: 95.43vw;
-    height: 195.25vw; 
+    width: 95vw;
+    height: 195vw; 
     position: absolute; 
     z-index: 21;
     margin-top: 135%;
@@ -1539,8 +1539,8 @@ body {
 }
 
 .paper{
-    width: 14.79vw;
-    height: 15.90vw;
+    width: 14vw;
+    height: 15vw;
     position: absolute;
     z-index: 1000;  
     margin-top: 34%;
@@ -1566,8 +1566,8 @@ body {
 .game5{
     margin-top: 40%;
     margin-left: 29%;
-    width: 41.03vw;
-    height: 49.43vw;
+    width: 41vw;
+    height: 49vw;
     position: absolute;
     z-index: 100000000000;
     display: none;
