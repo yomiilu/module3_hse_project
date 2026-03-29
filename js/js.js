@@ -48,8 +48,10 @@ document.addEventListener("DOMContentLoaded", function(){
   const dialog_opened = document.querySelector('.dialog_opened');
   const text = document.querySelector('.text');
   const textik = document.querySelector('.textik1');
+  const textik1_2 = document.querySelector('.textik1_2');
+  const text_small1 = document.querySelector('.text_small1');
   
-  if (dialog_closed && dialog_opened && text && textik) {
+  if (dialog_closed && dialog_opened && text && textik && textik1_2 && text_small1) {
     dialog_closed.style.display = 'none';
     dialog_opened.style.display = 'block';
     text.style.display = 'block';
@@ -60,6 +62,8 @@ document.addEventListener("DOMContentLoaded", function(){
       text.style.display = 'none';
       textik.style.display = 'none';
       dialog_closed.style.display = 'block';
+      textik1_2.style.display = 'none';
+      text_small1.style.display = 'none';
     });
     
     dialog_closed.addEventListener('click', function() {
@@ -67,6 +71,8 @@ document.addEventListener("DOMContentLoaded", function(){
       dialog_opened.style.display = 'block';
       text.style.display = 'block';
       textik.style.display = 'block';
+      textik1_2.style.display = 'block';
+      text_small1.style.display = 'block';
     });
   }
 
@@ -174,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 setTimeout(function() {
     document.querySelector('.black_square').style.opacity = '0.5';
-}, 3000);
+}, 5000);
 
 
 
@@ -718,6 +724,7 @@ potions.forEach(function(potion) {
 
 
 
+
 const rezak = document.querySelector('.rezak');
 const rezak2 = document.querySelector('.rezak2');
 const piece_glasses = document.querySelectorAll('.piece_glass1, .piece_glass2, .piece_glass3, .piece_glass4');
@@ -1006,14 +1013,30 @@ if (close_button2 && game4) {
 
 
 const paper = document.querySelector('.paper');
+const close_button3 = document.querySelector('.close_button3');
+const close_button4 = document.querySelector('.close_button4');
 const game5= document.querySelector('.game5')
 const game6 = document.querySelector('.game6')
 
-if (paper && game5) {
+if (paper && game5 && game6 && close_button3 && close_button4) {
+
     paper.addEventListener('click', function() {
         game5.style.display = 'block';
         game6.style.display = 'block';
         document.querySelector('.black_square').style.opacity = '0.5';
+    });
+
+    close_button3.addEventListener('click', function() {
+        game5.style.display = 'none';
+        game6.style.display = 'none';
+        game5.remove();
+
+        document.querySelector('.black_square').style.opacity = '0';
+    });
+
+    close_button4.addEventListener('click', function() {
+        game6.style.display = 'none';
+        document.querySelector('.black_square').style.opacity = '0';
     });
 }
 
@@ -1113,6 +1136,7 @@ let counter = 0;
 
                 if (counter === 4){
                   game5.style.display = 'none';
+                  game5.remove();
                 }
             }
         });
