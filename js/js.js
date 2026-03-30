@@ -94,17 +94,16 @@ document.addEventListener("DOMContentLoaded", function(){
       text2.style.display = 'none';
       textik2.style.display = 'none';
       dialog_closed2.style.display = 'block';
-      textik4.style.display = 'none';
-      text_small3.style.display = 'none';
+      textik_2.style.display = 'none';
+      text_small2.style.display = 'none';
     });
     
     dialog_closed2.addEventListener('click', function() {
       dialog_closed2.style.display = 'none';
       dialog_opened2.style.display = 'block';
       text2.style.display = 'block';
-      textik2.style.display = 'block';
-      textik4.style.display = 'block';
-      text_small3.style.display = 'block';
+      textik_2.style.display = 'block';
+      text_small2.style.display = 'block';
     });
   }
 
@@ -366,9 +365,7 @@ let polivClicked = false;
 const flowerSmall = document.querySelector('.flower_small');
 const flowerGrow = document.querySelector('.flower_grow');
 
-console.log('poliv:', poliv);
-console.log('flowerSmall:', flowerSmall);
-console.log('flowerGrow:', flowerGrow);
+
 
 if (poliv) {
   poliv.addEventListener('click', () => {
@@ -649,7 +646,6 @@ potions.forEach(function(potion) {
         const all_same = colors.every(c => c === first_color);
 
         if (all_same) {
-            console.log(`Ряд ${row_number + 1} — полностью ${first_color} (${colors.length} шт)`);
             completed_rows++;
         }
     });
@@ -665,11 +661,7 @@ potions.forEach(function(potion) {
             text2.style.opacity = '0';
             textik_2.style.opacity = '1';
             text_small2.style.opacity = '1';
-    } else if (completed_rows > 0) {
-        console.log(`Пока собрано ${completed_rows} из 3 рядов`);
-    } else {
-        console.log("Полных одноцветных рядов пока нет");
-    }
+    } 
 }
 
 
@@ -819,9 +811,6 @@ if (rezak2 && piece_glasses.length > 0) {
             }
           
           const all_cut = Array.from(piece_glasses).every(p => p.classList.contains('cut'));
-          if (all_cut) {
-            console.log('Все осколки вырезаны!');
-          }
         }
       } else {
         if (!piece.classList.contains('cut')) {
@@ -1137,6 +1126,12 @@ let counter = 0;
                 if (counter === 4){
                   game5.style.display = 'none';
                   game5.remove();
+                  const sound5 = document.getElementById('done');
+                  sound5.volume=0.3;
+                          if (sound5) {
+                              sound5.currentTime = 0;
+                              sound5.play().catch(e => console.log('ошибка!', e));
+                          }                  
                 }
             }
         });
@@ -1145,7 +1140,7 @@ let counter = 0;
   const button = document.querySelector('.button');
   if (button) {
     button.addEventListener('click', () => {
-        window.location.href = 'https://deziiign.com/designer/evgeniya-chernyshenko-caecc657a5fa47999073f9ddd446fbe3';
+        window.location.href = 'https://www.calameo.com/read/0081900930cbd92f00fa9';
     });
 }
 
