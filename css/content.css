@@ -362,6 +362,7 @@ body {
     font-size: 1.66vw;
     pointer-events: none;
     opacity: 0;
+    display: none;
 
 }
 
