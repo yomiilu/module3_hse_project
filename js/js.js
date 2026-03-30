@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function(){
   const textik_2 = document.querySelector('.textik_2');
   const text_small2 = document.querySelector('.text_small2');
   
-  if (dialog_closed2 && dialog_opened2 && text2 && textik2) {
+  if (dialog_closed2 && dialog_opened2 && text2 && textik2 && textik_2 && text_small2) {
     dialog_closed2.style.display = 'none';
     dialog_opened2.style.display = 'block';
     text2.style.display = 'block';
@@ -102,6 +102,7 @@ document.addEventListener("DOMContentLoaded", function(){
       dialog_closed2.style.display = 'none';
       dialog_opened2.style.display = 'block';
       text2.style.display = 'block';
+      textik2.style.display = 'block';
       textik_2.style.display = 'block';
       text_small2.style.display = 'block';
     });
